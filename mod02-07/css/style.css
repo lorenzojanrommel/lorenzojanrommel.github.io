@@ -1,0 +1,147 @@
+/*Type Selector*/
+/*p {
+	background: yellow;
+}*/
+/*id selector*/
+/*#param1{
+	background: red;
+}*/
+
+/*class selector*/
+
+/*.paragraphs {
+	background: orange;
+}*/
+/*attribute selector*/
+/*a[target] {
+	color: green;
+}*/
+/*attribute ( with value) */
+/*a[target="_blank"] {
+	color: violet;
+}*/
+
+/*universal selecter*/
+/** {
+	background: green;
+}*/
+
+/*Adjacent sibling*/ 
+/*h5 + a {
+	background-color: red;
+}
+
+h5 + a + br + a {
+	background-color: yellow;
+}
+h5 + a +  br + a + br + a{
+	background-color: blue;
+	color: white;
+}*/
+/*General Sibling combinator*/
+/*h5 ~ div a {
+	background-color: red;
+}
+*/
+/*	Child selector combinator*/
+
+/*div > a {
+	background-color: yellow;
+}*/
+/*div > a {
+	
+	background-color: green;
+	
+}*/
+/*Decendant selector*/
+/*span a {
+	
+	background-color: blue;
+	color: white;
+}
+*/
+/*Pseudo-class*/
+/*a:link {
+	color: orange;
+	background-color: black;
+	padding:10px;
+}
+
+a:visited {
+	background-color: yellow;
+	background: green;
+}
+}*/
+a:focus {
+	background-color: black;
+	color: red;
+}
+
+a:hover {
+
+	background-color: orange;
+}
+
+a:active,
+h3:active,
+h5:active {
+	background-color: black;
+	color: white;
+}
+
+/*first-child of the container pseudo class*/
+/*fist and last child*/
+/*li:first-child {
+	background-color: black;
+	color: yellow;	
+}
+li:last-child {
+	background-color: black;
+	color: yellow;	
+}
+
+p:first-child, 
+p:last-child {
+	background-color: black;
+	color: yellow;	
+}
+*/
+
+/*even and odd*/
+/*li:nth-child(even),
+p:nth-child(even){
+	background-color: black;
+	color: orange;
+}
+li:nth-child(odd),
+p:nth-child(odd) {
+	background-color: orange;
+	color: black;
+}
+*/
+
+/*Grouping*/
+/*h3, 
+h5, 
+p, 
+li,
+a:link
+ {
+	background-color: black;
+	color:orange;
+}*/
+
+p {
+	background-color: black;
+	color: yellow;
+}
+
+.thirdParagraph {
+	background-color: blue;
+	color: white;
+}
+
+#lastChild {
+	background-color: green;
+	
+}
