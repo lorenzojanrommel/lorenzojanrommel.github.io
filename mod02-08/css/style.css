@@ -1,0 +1,265 @@
+/*
+ *CSS reset
+ * 
+ */
+
+ * {
+ 	padding: 0;
+ 	margin: 0;
+ 	box-sizing: border-box; /* To avoid Overflow*/
+ }
+body {
+	background-color: lightgrey;
+}
+ .wrapper {
+ 	margin: 0 auto;
+ 	width: 80%;
+ 	background-color: #fff;
+ }
+
+/* div {
+ 	padding: 20px;
+ }*/
+.grandparent {
+	background-color: skyblue;
+	/*width: 100%;*/ /*refer to wrapper container's width*/
+	width: inherit;
+	position: fixed;
+	bottom: 0px;
+	/*left: 50px;*/
+}
+
+.parent {
+	background-color: pink;
+	width: 100%; /*refer to grandparent container's width*/
+	position: relative;
+}
+
+/*p {*/
+	/*position: static; *//* Default*/
+	/*margin-left: 50px;*/
+	/*margin-top: -20px;*/
+/*}*/
+
+input[name="submit"] { /*attribute selector*/
+	margin-left: 20px;
+	/*padding: 5px;*/
+}
+/*input[name="firstname"] {
+	padding: 5px;
+	background-color: red;
+}*/
+strong {
+	background-color: yellow;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	/*bottom: -100px;
+	right: -100px;*/
+}
+
+/*.wrapper > p {
+	padding: 20px;
+	background-color: blue;
+}*/
+
+.parent > a {
+	position: relative;
+	float: right;
+
+}
+
+
+h1 {
+	background-color: grey;
+	padding: 10px;
+	position: fixed;
+	z-index: 1; /*will push element on top*/
+	width: inherit;
+}
+main.wrapper > p {
+	height: 1000px;
+	background-color: #efefef;
+	position: relative;
+	top: 70px;
+}
+
+/*
+ *
+ *Page 3 CSS Rules
+ *
+ */
+
+/* div {
+ 	width: 100px;
+ 	height: 100px;
+ 	border: 1px solid #000;
+ 	position: absolute;
+ }
+*/
+ .blue {
+ 	background-color: blue;
+ 	top: 20px;
+ 	left: 20px;
+ 	z-index: 2;
+ }
+ .yellow {
+ 	background-color: yellow;
+ 	top: 40px;
+ 	left: 40px;
+ 	z-index: 1;
+ }
+ .orange {
+ 	background-color: orange;
+ 	top: 60px;
+ 	left: 60px;
+ 	z-index: 3;
+ }
+
+ /*
+  *Page 4 CSS Rules
+  *
+  */
+/*
+ main.wrapper div {
+ 	padding: 0;
+ 	margin: 0;
+ }*/
+
+ .menu {
+ 	height: 100px;
+ 	background-color: #b2d6ff;
+ 	/*line-height: 100px;
+ 	text-align: center;*/
+ }
+
+ .sidebar {     
+ 	height: 300px;     
+ 	width: 20%;     
+ 	float: left; /* Posible value: right, none, left*/     
+ 	background-color: #f09a9d;  
+
+ 	/*margin: 0 auto;*/  
+ } 
+
+ /*
+  *
+  *Content Section
+  *
+  */
+ .content {     
+ 	padding: 20px;
+ 	width: 80%;     
+ 	float: left;
+ 	background-color: #f5c58e;  
+ } 
+.article-image {
+	width: 300px;
+	/*height: 200px;*/
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	padding: 20px;
+}
+div.content > p {
+	margin-bottom: 10px;
+
+}
+/*
+ *
+ * Footer
+ *
+ */
+ .footer {    
+ /*	height: 200px;*/     
+ 	background-color: #d6e9fe;     
+ 	clear: both ; /* Will offset floating effect |||| Values:left right both */   
+ }
+.avatar {
+	width: 60px;
+	height: 60px;
+	background-color: #d639fe;
+	border-radius: 50%;
+	float: left;
+	margin-right: 25px;
+	padding: 20px;
+	background-image: url('https://lorempixel.com/60/60');
+}
+.username {
+	margin-bottom: 15px;
+}
+h3.username + p {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	/*float: right;*/
+}
+ .page {
+ 	/*border: 1px solid red;*/
+ }
+ /*
+  *
+  *Best way to clear floats
+  *
+  */
+  /*Corret cut float*/
+.clear:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+/*
+ *
+ * Columns
+ *
+ */
+
+ .column {
+ 	background-color: #b2d6ff;
+ 	height: 160px;
+ 	width: 31%;
+ 	margin: 20px 1.16%;
+ 	/*border: 1px solid red;*/
+ 	float: left;
+ 	padding: 15px;
+ 	position: relative;
+ 	/*overflow: hidden;*/
+ } 
+
+/*
+ *
+ * Managing text-overflow with multiline support
+ *
+ */
+
+ .block-with-text {
+ 	overflow: hidden;
+ 	position: relative;
+ 	line-height: 1.2em; /*em = default font-size, 16px*/
+ 	max-height: 3.6em;
+ 	text-align: left;
+ 	margin-right: -1em;
+ 	padding-right: 30px;
+ }
+
+ .block-with-text:before {
+ 	content: "...";
+ 	position: absolute;
+ 	right: 17px;
+ 	bottom: 0;
+ }
+
+ .block-with-text:after {
+ 	content: "";
+ 	position: absolute;
+ 	right: 70px;
+ 	width: 1em;
+ 	height: 1em;
+ 	margin-top: 0.2em;
+ 	background-color: #b6d6ff;
+ }
+
+ .read-more {
+ 	position: absolute;
+ 	right: 25px;
+ 	bottom: 25px;
+ }
