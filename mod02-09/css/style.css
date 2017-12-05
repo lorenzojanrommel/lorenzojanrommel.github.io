@@ -135,6 +135,7 @@ main.wrapper > p {
  	border-radius: 2px;
  	font-family: 'Fondamento', cursive;
  	font-size: 70px;
+ 	opacity: 0.6;
  }
 
  .sidebar {     
@@ -164,7 +165,7 @@ main.wrapper > p {
  	float: left;
  	background-color: #C8E6C9; 
  	opacity: 0.8;
- 	border-radius: 25px; 
+
  } 
 .article-image {
 	width: 300px;
@@ -186,7 +187,8 @@ div.content > p {
  */
  .footer {    
  /*	height: 200px;*/     
- 	background-color: #e4e4ff;     
+ 	background-color: #e4e4ff;
+
  	clear: both ; /* Will offset floating effect |||| Values:left right both */   
  }
 .avatar {
@@ -214,6 +216,7 @@ h3.username + p {
  	background-color: #e4e4ff;
  	padding: 20px;
  	border-bottom: 1px solid #000;
+ 	opacity: 0.9;
  }
  /*
   *
@@ -295,6 +298,7 @@ h3.username + p {
  	background: #000;
  	font-size: 18px;
  	font-family: 'Fondamento', cursive;
+ 	opacity: 0.6; 
  }
 
  ul {
