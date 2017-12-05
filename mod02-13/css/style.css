@@ -1,0 +1,112 @@
+/*css reset*/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+/* header*/
+header {
+	height: 100%;
+	position: fixed;
+	background-color: #388E3C;
+	width: 20%;
+	text-align: center;
+	float: left;
+}
+.square {
+	background-color: #B2DFDB;
+	height: 200px;
+	width: 80%;
+	margin: 20px auto;
+	opacity: 0.9;
+	border-radius: 5px;
+}
+
+li {
+	background-color: #64FFDA;
+	padding: 20px;
+	width: 80%;
+    margin: 2px auto;
+    font-size: 20px;
+}
+
+nav > ul > a {
+	text-decoration: none;
+	color: #263238;
+	list-style-type: none;
+}
+/*
+ *
+ *
+ * main
+ *
+ */
+
+main {
+	width: 80%;
+	float: right;
+}
+
+#home {
+	height: 720px;
+	background-color: #B2EBF2;
+}
+#about {
+	height: 500px;
+	background-color: #FFCDD2;
+}
+#services {
+	height: 500px;
+	background-color: #F8BBD0;
+	color: #fff;
+}
+#projects {
+	height: 500px;
+	background-color: #B39DDB;
+}
+#gallery {
+	height: 500px;
+	background-color: #C5CAE9;
+}
+
+section#home > div.website {
+	border: 5px solid #fff;
+	position: relative;
+	width: 40%;
+	text-align: center;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%); 
+}
+
+section#home > div.website > div.descrip {
+	padding: 60px;
+}
+
+section#home > div.website > div.descrip > h1 {
+	font-size: 3em;
+	font-family: 'Molle', cursive;
+}
+p {
+	font-family: 'Niconne', cursive;
+	font-size: 25px;
+}
+
+h3 {
+	color: #fff;
+	font-size: 50px;
+	text-align: center;
+	line-height: 500px;
+	font-family: 'Molle', cursive;
+}
+/*footer*/
+footer {
+	float: right;
+	width: 80%;
+	height: 50px;
+	background-color: #000;
+	text-align: center;
+	line-height: 50px;
+	color: #fff;
+	opacity: 0.5;
+}
