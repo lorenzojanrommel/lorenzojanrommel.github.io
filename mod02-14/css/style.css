@@ -1,0 +1,95 @@
+/*CSS Reset*/
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+/*
+ *
+ *General Rules
+ *
+ */
+ .page {
+ 	width: 100%;
+ }
+ .section {
+ 	width: 100%;
+ 	height: 300px;
+ }
+ .menu {
+ 	background-color: #5995da;
+ 	height: 80px;
+ }
+ .header {
+ 	background-color: #b2d6ff;
+ }
+ .content {
+ 	background-color: #eaedf0;
+ 	height: 600px;
+ }
+ .sign-up {
+ 	background-color: #CE93D8;
+ }
+ .feature-1 {
+ 	background-color: #d6e9fe;
+ }
+ .feature-2 {
+ 	background-color: #f5cf8e;
+ }
+ .feature-3 {
+ 	background-color: #c8c6fa;
+ }
+/*
+ *
+ *Mobile Devices
+ *
+ *
+ */
+@media only screen and (max-width: 568px) {
+
+	body {
+		background-color: red;
+	}
+}
+
+ /*
+  *
+  *Tablet Devices
+  *
+  *
+  */
+@media only screen and (min-width: 569px) and (max-width: 968px) {
+
+	body {
+		background-color: yellow;
+	} 
+
+	.sign-up,
+	.feature-1,
+	.feature-2,
+	.feature-3 {
+		float:left;
+		width: 50%;
+	}
+}
+
+  /*
+   *
+   *Desktop Devices
+   *
+   */
+
+  @media only screen and (min-width: 969px) {
+  	body {
+  		background-color: orange;
+  	}
+  	.sign-up{
+  		height: 150px;
+  	}
+	.feature-1,
+	.feature-2,
+	.feature-3 {
+		float:left;
+		width: 33.33%;
+	}
+  }
