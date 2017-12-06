@@ -4,30 +4,37 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+html {
+	font-family: 'Niconne', cursive;
+}
 /* header*/
 header {
 	height: 100%;
 	position: fixed;
-	background-color: #388E3C;
+	background-color: #161916;
 	width: 20%;
 	text-align: center;
 	float: left;
 }
 .square {
-	background-color: #B2DFDB;
+	background: url('../img/coffee.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
 	height: 200px;
 	width: 80%;
 	margin: 20px auto;
 	opacity: 0.9;
 	border-radius: 5px;
+	border: 5px solid #fff;
 }
 
 li {
-	background-color: #64FFDA;
+	background-color: #fff;
 	padding: 20px;
 	width: 80%;
-    margin: 2px auto;
-    font-size: 20px;
+    margin: 20px auto;
+    font-size: 25px;
+    border-radius: 18px;
 }
 
 nav > ul > a {
@@ -49,28 +56,29 @@ main {
 
 #home {
 	height: 720px;
-	background-color: #B2EBF2;
+	background-color: #6b0000;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 #about {
 	height: 500px;
-	background-color: #FFCDD2;
+	background-color: #36368a;
 }
 #services {
 	height: 500px;
-	background-color: #F8BBD0;
+	background-color: #6b0000;
 	color: #fff;
 }
 #projects {
 	height: 500px;
-	background-color: #B39DDB;
+	background-color: #36368a;
 }
 #gallery {
 	height: 500px;
-	background-color: #C5CAE9;
+	background-color: #6b0000;
 }
 
 section#home > div.website {
-	border: 5px solid #fff;
 	position: relative;
 	width: 40%;
 	text-align: center;
@@ -80,16 +88,22 @@ section#home > div.website {
 }
 
 section#home > div.website > div.descrip {
-	padding: 60px;
+	padding: 30px;
+	background-color: #000;
+	border-radius: 50px;
+	color: #fff;
+	opacity: 0.7;
+	/*width: 80%;
+	text-align: center;*/
 }
 
 section#home > div.website > div.descrip > h1 {
-	font-size: 3em;
+	font-size: 2.5em;
 	font-family: 'Molle', cursive;
 }
 p {
-	font-family: 'Niconne', cursive;
-	font-size: 25px;
+	
+	font-size: 18px;
 }
 
 h3 {
@@ -109,4 +123,13 @@ footer {
 	line-height: 50px;
 	color: #fff;
 	opacity: 0.5;
+}
+
+li:hover {
+	background-color: #000;
+	color: #fff;
+}
+
+li:active {
+	background-color: #EA80FC;
 }
