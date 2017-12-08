@@ -1,0 +1,18 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.btn {
+	border-radius: 0;
+}
+
+.well {
+	border-radius: 0;
+}
+
+.navbar-inverse {
+    background-color: #ff780a;
+    border-color: #ff5b16;
+}
