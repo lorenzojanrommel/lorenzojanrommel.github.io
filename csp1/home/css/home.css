@@ -1,0 +1,63 @@
+/*CSS Reset*/
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.yVideo {
+	width: 100%;
+	background-color: #fff;
+	background: url('../img/yvideobg.jpeg');
+    width: 100%;
+    height: calc(100% - 1.71875rem);
+    overflow: hidden;
+	padding-top: 1em;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.video-container {
+	margin-bottom: 1em;
+}
+.to-details {
+	width: 100%;
+	background-color: #fff;
+}
+.to-details-s-e-c {
+/*	background-color: #000; 
+	color: #fff;*/
+	width: 100%;
+	margin: 0 auto;
+	padding: 20px;
+	text-align: center;
+}
+p.to-details-p1 {
+	font-weight: bold;
+	font-size: 1.6em;
+}
+.select-season {
+	width: 100%;
+	background-color: #000;
+	color: #fff;
+}
+
+.select-your-season-container {
+	background-color: #e4e4e4;
+
+}
+.select-season-h5, .select-season-desc {
+	text-align: center;
+	font-weight: bold;
+	color: #d2d2e4;
+}
+.select-season-desc {
+	margin-top: -3.5em;
+}
+
+/*home mobile CSS*/
+@media only screen and (max-width: 480px) {
+.carousel .carousel-item {
+   top: -19px;
+}
+}
