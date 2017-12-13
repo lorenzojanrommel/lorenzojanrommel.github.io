@@ -9,14 +9,13 @@ body {
 	background-color: #01579B;
 }
 /*header nav*/
+
 nav > a.brand-logo > img.logo {
 	height: 56px;
 }
-
 .row .col {
 	padding: 0;
 }
-
 nav {
 	background-color: #000;
 }
@@ -43,7 +42,9 @@ div.icon img {
 nav ul a:hover {
 	background-color: #fff;
 }
-
+h5 {
+	font-weight: bold;
+}
 header {
 	border-bottom: 1px solid #fff;
 }
@@ -61,6 +62,7 @@ a.dropdown-button {
 	color: #000;
 	line-height: 37px;
 	text-align: center;
+	font-size: 1em;
 }
 .disabled {
     pointer-events:none; /*//This makes it not clickable*/
@@ -102,10 +104,11 @@ h1.title-header {
 
 div.contacts {
 	display: inline-block;
-	float: right;
 	padding-left: 10px;
 	padding-bottom: 10px;
 	color: #fff;
+	padding-top: 2em;
+	right: 0;
 }
 div.contacts a {
 	text-decoration: none;
@@ -126,13 +129,23 @@ div.getting-started {
 	text-align: center;
     line-height: 100px;
 }
-.btn, .btn-large {
-	background-color: #ad0000;
-}
+
 /*footer*/
 .page-footer {
 	background-color: #000;
 	color: #fff;
+	padding: 0 10px;
+}
+.btn, .btn-large {
+	background-color: #ad0000;
+	letter-spacing: 1px;
+}
+.copy {
+	font-size: .9em;
+}
+.title-footer {
+	display: inline-block;
+    font-size: 1.3em;
 }
 .light, .page-footer .footer-copyright {
 	border-top: 1px solid #fff;
@@ -174,6 +187,149 @@ img.logo {
 }
 p.char-quote {
 	font-size: 1.5em;
+}
+nav ul li.active {
+	background-color: #F44336;
+}
+.disclaimer {
+	text-align: center;
+	border-top: 1px solid #fff;
+}
+/*about css*/
+.about-container {
+	width: 100%;
+	background-color: #fff;
+	padding-bottom: 20px;
+}
+.about-details {
+	width: 100%;
+}
+h3.about-header {
+	margin: 0;
+}
+.about-p {
+	font-size: 1.3em;
+	text-indent: 50px;
+	text-align: justify;
+}
+/*Leave message*/
+.leaveMes-container {
+	width: 100%;
+	background-color: #fff;
+	padding-bottom: 20px;
+}
+.leaveMes {
+	width: 100%;
+	padding: 1.4em;
+	border: 1px solid #000;
+}
+.leaveMes-h3 {
+	margin: 0;
+	font-size: 1em;
+	font-weight: bold;
+	padding-bottom: 10px;
+}
+.input-field.col label {
+	left: 0;
+}
+form.col > div.leave {
+	margin-left: 0.75rem;
+    margin-right: -2.25rem;
+}
+/*Team*/
+.team-container {
+	background-color: #fff;
+}
+.team {
+	width: 100%;
+}
+.member1,
+.member2
+{
+	border-right: 1px solid #000;
+}
+.team-h5 {
+	margin: 0;
+	text-align: center;
+	font-size: 2em;
+	font-weight: bold;
+	padding: .6em 0;
+}
+.member-images {
+	padding: 10px;
+	text-align: center;
+}
+.member-img {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+}
+.member-name {
+	margin: 0;
+	text-align: center;
+    font-size: 1em;
+    font-weight: bold;
+}
+.member-details {
+	padding: 5px;
+	font-size: .7em;
+	text-align: justify;
+	text-indent: 20px;
+}
+/*Articles*/
+.article-container {
+	background-color: #fff;
+	padding: 1em 0;
+}
+.article-block {
+	position: relative;
+	border-bottom: 2px solid #000;
+}
+.latestUp {
+	background-color: #000;
+	display: inline-block;
+	margin: 0;
+}
+h5.latestUp > span {
+	color: #fff;
+	font-size: .9em;
+}
+.articles {
+	width: 100%;
+}
+
+div.article-content {
+	padding: 10px;
+	border-bottom: 1px solid #000;
+}
+.article-h5, 
+.article-post-date {
+	margin: 0;
+	padding-left: 10px;
+}
+.article-post-date {
+	padding-left: 10px;
+}
+.article-h5 {
+	font-size: .9em;
+	font-weight: bold;
+	padding-top: 10px;
+}
+.article-details {
+	padding-bottom: 10px;
+	text-indent: 50px;
+	text-align: justify;
+}
+.article-img {
+    object-fit: cover;
+    margin: 0 auto;
+    border: 2px solid #000;
+}
+.category {
+	padding: 1.1em;
+}
+.forumCon {
+	padding-top: 10px;
 }
 /*mobile*/
 @media only screen and (max-width: 480px) {
@@ -230,6 +386,9 @@ p.char-quote {
 		text-indent: 50px;
 		text-align: justify;
 	}
+	h5.latestUp > span {
+		font-size: .6em;
+	}
 }
 /*Tablet*/
 @media only screen and (min-width: 481px) and (max-width: 960px) {
@@ -269,6 +428,25 @@ p.char-quote {
 	}
 	h1.title-header {
 		margin-top: -1em;
+	}
+	.team-h5 {
+		font-size: 3em;
+	}
+	.member-img {
+	width: 60px;
+	height: 60px;
+	}
+	.member-name {
+		font-size: 1.5em;
+	}
+	.member-details {
+		font-size: .9em;
+	}
+	.article-h5 {
+		font-size: 1.5em;
+	}
+	h5.latestUp > span {
+		font-size: .9em;
 	}
 
 }
@@ -322,5 +500,25 @@ p.char-quote {
 	}
 	.fa-3x {
 		font-size: 2em;
+	}
+	.grey-text.text-darken-3 {
+		font-size: 1.5em;
+	}
+	.member-img {
+		width: 132px;
+		height:132px;
+	}
+	.member-name {
+		font-size: 2em;
+	}
+	.member-details {
+		font-size: 1.4em;
+    	padding: 25px;
+	}
+	.team-h5 {
+		font-size: 3em;
+	}
+	.article-h5 {
+		font-size: 1.5em;
 	}
 }

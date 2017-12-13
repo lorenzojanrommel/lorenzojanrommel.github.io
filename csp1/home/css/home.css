@@ -23,6 +23,7 @@
 .to-details {
 	width: 100%;
 	background-color: #fff;
+
 }
 .to-details-s-e-c {
 /*	background-color: #000; 
@@ -35,6 +36,7 @@
 p.to-details-p1 {
 	font-weight: bold;
 	font-size: 1.6em;
+	font-family: 'Francois One', sans-serif;
 }
 .select-season {
 	width: 100%;

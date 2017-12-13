@@ -1,0 +1,112 @@
+/*CSS Reset*/
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.yVideoS1 {
+	width: 100%;
+	background-color: #fff;
+	background: url('../img/season1.jpg');
+    width: 100%;
+    height: calc(100% - 1.71875rem);
+    overflow: hidden;
+	padding-top: 1em;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.yVideoS2 {
+	width: 100%;
+	background-color: #fff;
+	background: url('../img/season2.jpg');
+    width: 100%;
+    height: calc(100% - 1.71875rem);
+    overflow: hidden;
+	padding-top: 1em;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.yVideoS3 {
+	width: 100%;
+	background-color: #fff;
+	background: url('../img/season3.jpg');
+    width: 100%;
+    height: calc(100% - 1.71875rem);
+    overflow: hidden;
+	padding-top: 1em;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.yVideoS4 {
+	width: 100%;
+	background-color: #fff;
+	background: url('../img/season4.jpg');
+    width: 100%;
+    height: calc(100% - 1.71875rem);
+    overflow: hidden;
+	padding-top: 1em;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+p.to-season-details-p1 {
+	font-size: 1.5em;
+	font-weight: bold;
+	font-family: 'Francois One', sans-serif;
+}
+.season-container {
+/*	height: 500px;*/
+	width: 100%;
+	background-color: #650303;;
+
+}
+.season-box {
+	height: 100px;
+	width: 100px;
+	background-color: #76FF03;
+	margin: 20px;
+}
+/*.season-box2 {
+	height: 100px;
+	width: 100px;
+	background-color: #FFFF00;
+}*/
+.card {
+	border-radius: 13px;
+    opacity: .8;
+}
+.card .card-image img {
+	height: 200px;
+	object-fit: cover;
+}
+.episode-title {
+	font-size: 1em;
+	margin-bottom: 0;
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.row .col.m6 {
+	padding: 20px;
+}
+/*season mobile*/
+@media only screen and (max-width: 480px) {
+
+}
+/*season tablet*/
+@media only screen and (min-width: 481px) and (max-width: 960px ) {
+	.card {
+		height: 430px;
+	}
+}
+@media only screen and (min-width: 961px) {
+	.card {
+		height: 430px;
+	}
+}

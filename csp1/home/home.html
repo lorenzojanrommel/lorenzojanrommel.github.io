@@ -17,6 +17,7 @@
 	<!-- import google fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Francois+One" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 </head>
 <body>
 	<!-- Navbar -->
@@ -28,11 +29,10 @@
 					<ul id="season" class="dropdown-content">
 						<li class="disabled"><a href="#">Season</a></li>
 						<li class="divider"></li>
-						<li><a href="#!">Season 1</a></li>
-						<li><a href="#!">Season 2</a></li>
-						<li><a href="#!">Season 3</a></li>
-						<li><a href="#!">Season 4</a></li>
-						<li><a href="#!">Season 5</a></li>
+						<li><a href="../season/season1.html">Season 1</a></li>
+						<li><a href="../season/season2.html">Season 2</a></li>
+						<li><a href="../season/season3.html">Season 3</a></li>
+						<li><a href="../season/season4.html">Season 4</a></li>
 					</ul>
 					<div class="container">
 						<a href="../index.html" class="brand-logo"><img class="logo" src="../img/logo.png"></a>
@@ -40,14 +40,14 @@
 							<i class="fa fa-bars fa-2x" aria-hidden="true"> <span class="sr-only">menu</span></i>
 						</a>
 						<ul class="right hide-on-med-and-down">
-							<li><a href="home.html">Home</a></li>
+							<li class="active"><a href="home.html">Home</a></li>
 							<li><a href="../character/character.html">Character</a></li>
 							<li>
 								<a class="dropdown-button" href="#!" data-activates="season">Seasons
 									<i class="fa fa-caret-down" aria-hidden="true"><span class="sr-only">arrow_drop_down </span></i>
 								</a>
 							</li>
-							<li><a href="#">About Us</a></li>
+							<li><a href="../about.html">About Us</a></li>
 						</ul>
 						<ul class="side-nav" id="mobile-demo">
 							<div class="icon">
@@ -55,18 +55,18 @@
 									<img class="icon" src="../img/icon.png">
 								</a>
 							</div>
-							<li><a href="home.html">Home</a></li>
+							<li class="active"><a href="home.html">Home</a></li>
 							<li><a href="../character/character.html">Character</a></li>
 							<li>
 								<a class="dropdown-button" href="#!" data-activates="seasonSide">Season</a>
 							</li>
 							<ul id='seasonSide' class='dropdown-content'>
-								<li><a href="#">Season 1</a></li>
-								<li><a href="#!">Season 2</a></li>
-								<li><a href="#!">Season 3</a></li>
-								<li><a href="#!">Season 4</a></li>
+								<li><a href="../season/season1.html">Season 1</a></li>
+								<li><a href="../season/season2.html">Season 2</a></li>
+								<li><a href="../season/season3.html">Season 3</a></li>
+								<li><a href="../season/season4.html">Season 4</a></li>
 							</ul>
-							<li><a href="#">About Us</a></li>
+							<li><a href="../about.html">About Us</a></li>
 						</ul>
 					</nav>
 				</header>
@@ -93,64 +93,174 @@
 				</div> <!-- /to-details -->
 				<!-- Select your Season -->
 				<div class="select-your-season-container">
-						<div class="select-season">
-							<div class="carousel">
-								<h5 class="select-season-h5"> Select your Season</h5>
-								<a class="carousel-item" href="../index.html"><img src="img/season1.png">
+					<div class="select-season">
+						<div class="carousel">
+							<h5 class="select-season-h5"> Select your Season</h5>
+							<a class="carousel-item" href="../season/season1.html"><img src="img/season1.png">
 								<h5 class="caption center-align select-season-desc">Season 1</h5>
-								</a>
-								<a class="carousel-item" href="#hayley"><img src="img/season2.png">
+							</a>
+							<a class="carousel-item" href="../season/season2.html"><img src="img/season2.png">
 								<h5 class="caption center-align select-season-desc">Season 2</h5></a>
 								<!-- <a class="carousel-item" href="#three!"><img src="img/freya.jpg"></a> -->
-								<a class="carousel-item" href="#four!"><img src="img/season3.png">
-								<h5 class="caption center-align select-season-desc">Season 3</h5></a>
-								<a class="carousel-item" href="#six!"><img src="img/season4.png">
-									<h5 class="caption center-align select-season-desc">Season 4</h5></a>
+								<a class="carousel-item" href="../season/season3.html"><img src="img/season3.png">
+									<h5 class="caption center-align select-season-desc">Season 3</h5></a>
+									<a class="carousel-item" href="../season/season4.html"><img src="img/season4.png">
+										<h5 class="caption center-align select-season-desc">Season 4</h5></a>
+									</div>
+								</div> <!-- /select your season -->
+							</div> <!-- /select your season container -->
+							<!-- Articles -->
+							<div class="article-container">
+								<div class="container">
+									<div class="row">
+										<div class="col s12 m8 l7">
+											<div class="articles">
+												<article class="col s12">
+													<div class="container">
+														<div class="row">
+															<!-- article 1 -->
+															<div class="article-block">
+																<h5 class="latestUp"> 
+																	<span>Latest Update
+																	</span>
+																</h5>
+															</div>
+															<div class="article-box">
+																<h5 class="article-h5">Article 1</h5>
+																<p class="article-post-date"><small> <cite>Posted on December 13 10:19 </cite></small></p>
+																<div class="article-content">
+																	<img class="responsive-img article-img m5" src="../img/articles/article1.png">
+																	<p class="article-details m7">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+																		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+																	quis nostrud exercitation ullamco</p>	
+																</div> <!-- /article content -->
+															</div> <!-- /article1 box -->
+															<!-- article 2 -->
+															<div class="article-box">
+																<h5 class="article-h5">Article 2</h5>
+																<p class="article-post-date"><small> <cite>Posted on December 13 10:19 </cite></small></p>
+																<div class="article-content">
+																	<img class="responsive-img article-img" src="../img/articles/article2.jpg">
+																	<p class="article-details m7">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+																		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+																	quis nostrud exercitation ullamco</p>	
+																</div> <!-- /article content -->
+															</div> <!-- /article2 box -->
+															<!-- article 3 -->
+															<div class="article-box">
+																<h5 class="article-h5">Article 3</h5>
+																<p class="article-post-date"><small> <cite>Posted on December 13 10:19 </cite></small></p>
+																<div class="article-content">
+																	<img class="responsive-img article-img" src="../img/articles/article3.png">
+																	<p class="article-details m7">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+																		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+																	quis nostrud exercitation ullamco</p>	
+																</div> <!-- /article content -->
+															</div> <!-- /article3 box -->
+															<!-- article 4 -->
+															<div class="article-box">
+																<h5 class="article-h5">Article 4</h5>
+																<p class="article-post-date"><small> <cite>Posted on December 13 10:19 </cite></small></p>
+																<div class="article-content">
+																	<img class="responsive-img article-img" src="../img/articles/article4.jpg">
+																	<p class="article-details m7">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+																		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+																	quis nostrud exercitation ullamco</p>	
+																</div> <!-- /article content -->
+															</div> <!-- /article4 box -->
+															<!-- article 5 -->
+															<div class="article-box">
+																<h5 class="article-h5">Article 5</h5>
+																<p class="article-post-date"><small> <cite>Posted on December 13 10:19 </cite></small></p>
+																<div class="article-content">
+																	<img class="responsive-img article-img" src="../img/articles/article5.png">
+																	<p class="article-details m7">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+																		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+																	quis nostrud exercitation ullamco</p>	
+																</div> <!-- /article content -->
+															</div> <!-- /article5 box -->
+														</div><!-- /row -->
+													</div> <!-- /container -->
+												</article> <!-- /article -->
+											</div> <!-- /articles -->
+										</div> <!-- /col -->
+										<div class="col s12 m4 l5">
+											<div class="category">
+												<div class="article-block">
+													<h5 class="latestUp"> 
+														<span>The Originals Fan Forum
+														</span>
+													</h5>
+												</div>
+												<div class="forumCon">
+													<img class="responsive-img" src="../img/forum/forum1.jpg">
+												</div>
+												<div class="article-block">
+													<h5 class="latestUp"> 
+														<span>The Vampire Diaries Fan Forum
+														</span>
+													</h5>
+												</div>
+												<div class="forumCon">
+													<img class="responsive-img" src="../img/forum/forum2.jpg">
+												</div>
+											</div>
+										</div> <!-- col -->
+									</div> <!-- /row -->
+								</div> <!-- /container -->
+							</div> <!-- /article and category container -->
+							<!--/Articles -->
+						</div> <!-- col s12 -->
+					</div> <!-- /row -->
+					<div class="col s12">	
+						<footer class="page-footer">
+							<div class="container">
+								<div class="row">
+									<div class="col s7 m9 l10">
+										<div class="title-footer">
+											<h3 class="title-footer"> The Originals</h3>
+										</div>
+									</div>
+									<div class="col s5 m3 l2">
+										<div class="contacts-container">
+											<div class="contacts">
+												<a href="#">
+													<i class="fa fa-facebook-official fa-2x" aria-hidden="true">
+														<span class="sr-only"> Facebook </span>
+													</i>
+												</a>
+											</div>
+											<div class="contacts">
+												<a href="#">
+													<i class="fa fa-twitter-square fa-2x" aria-hidden="true">
+														<span class="sr-only"> Twitter </span>
+													</i>
+												</a>
+											</div>
+											<div class="contacts">
+												<a href="#">
+													<i class="fa fa-instagram fa-2x" aria-hidden="true">
+														<span class="sr-only"> Instagram </span>
+													</i>
+												</a>
+											</div>
+										</div>
+									</div> 
+								</div>
 							</div>
-						</div> <!-- /select your season -->
-				</div> <!-- /select your season container -->
-			</div> <!-- col s12 -->
-		</div> <!-- /row -->
-		<div class="col s12">	
-			<footer class="page-footer">
-				<div class="container">
-					<div class="row">
-						<div class="col l6 s12">
-							<div class="contacts">
-								<a href="#">
-									<i class="fa fa-facebook-official fa-2x" aria-hidden="true">
-										<span class="sr-only"> Facebook </span>
-									</i>
-								</a>
+							<div class="footer-copyright">
+								<div class="container">
+									<div class="copy">
+										© Jan Rommel Lorenzo | Capstone 1 | 2017
+									</div>
+								</div>
 							</div>
-							<div class="contacts">
-								<a href="#">
-									<i class="fa fa-twitter-square fa-2x" aria-hidden="true">
-										<span class="sr-only"> Twitter </span>
-									</i>
-								</a>
-							</div>
-							<div class="contacts">
-								<a href="#">
-									<i class="fa fa-instagram fa-2x" aria-hidden="true">
-										<span class="sr-only"> Instagram </span>
-									</i>
-								</a>
-							</div>
-						</div>
+						</footer>
 					</div>
-				</div>
-				<div class="footer-copyright">
-					<div class="container">
-						© Jan Rommel Lorenzo | Capstone 1 | 2017
-					</div>
-				</div>
-			</footer>
-		</div>
-		<!-- import jQuery Materialize -->
-		<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-		<!-- Materialize minified JavaScript -->
-		<script src="../js/materialize.min.js"></script>
-		<script src="../js/javascript.js"></script>
-	</body>
-	</html>
+					<!-- import jQuery Materialize -->
+					<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+					<!-- Materialize minified JavaScript -->
+					<script src="../js/materialize.min.js"></script>
+					<script src="../js/javascript.js"></script>
+				</body>
+				</html>
