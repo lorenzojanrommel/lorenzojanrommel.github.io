@@ -171,6 +171,8 @@ h3.character {
 	margin: 0 auto;
 	padding: 10px;
 	color: #fff;
+	font-family: 'Great Vibes', cursive;
+	background-color: #0000008a;
 }
 .collapsible-body {
 	background-color: #cacacae0;
@@ -340,7 +342,7 @@ div.article-content {
 		top: 200px;
 	}
 	h1.title-header {
-		font-size: 3em;
+		font-size: 4em;
 		margin-top: -17px;
 	}
 	.section {
@@ -364,7 +366,7 @@ div.article-content {
 	div.collapsible-header span.avatar-name {
 		margin-left: 10px;
 		line-height: 47px;
-		font-size: 1.5em;
+		font-size: 1.3em;
 	}
 	img.logo {
 		height: 52px;
@@ -427,7 +429,8 @@ div.article-content {
 		text-align: justify;
 	}
 	h1.title-header {
-		margin-top: -1em;
+		margin-top: -42px;
+		font-size: 6em;
 	}
 	.team-h5 {
 		font-size: 3em;
@@ -456,7 +459,8 @@ div.article-content {
 		padding-left: 33px;
 	}
 	.title-header {
-    	font-size: 2em;
+    	font-size: 3.5em;
+    	margin-top: -18px;
 	}
 	.section {
 		margin-top: 50%;

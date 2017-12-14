@@ -2,5 +2,32 @@
 .section {
 	margin-top: 0;
 }
-
+.char-container {
+	width: 100%;
+	background-color: #fff;
+	background: url('../img/charbg3.jpg');
+    width: 100%;
+    height: calc(100% - 1.71875rem);
+    overflow: hidden;
+	padding-top: 1em;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+/*mobile character*/
+@media only screen and (max-width: 480px) {
+	p.char-quote {
+	font-size: .9em;
+}
+}
+@media only screen and (min-width: 481) and (max-width: 960px) {
+	h3.character {
+	font-size: 10em;
+}
+}
+@media only screen and (min-width: 961px){
+	h3.character {
+	font-size: 10em;
+}
+}
 
