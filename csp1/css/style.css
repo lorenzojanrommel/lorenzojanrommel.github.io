@@ -6,7 +6,6 @@
 }
 body {
 	font-family: 'Montserrat', sans-serif;
-	background-color: #01579B;
 }
 /*header nav*/
 
@@ -333,6 +332,9 @@ div.article-content {
 }
 .forumCon {
 	padding-top: 10px;
+}
+.disclaimer-container {
+	background-color: #fff;
 }
 /*mobile*/
 @media only screen and (max-width: 480px) {

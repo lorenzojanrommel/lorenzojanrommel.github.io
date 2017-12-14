@@ -16,25 +16,7 @@ $(document).ready(function(){
  $(document).ready(function(){
    	$('.collapsible').collapsible();
  });
-// youtube
-// $(document).ready(function(){
-// // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-// $('.modal-trigger').leanModal();
-// });
-
-
-// $(document).ready(function(){
-//     var videos = $("video");
-
-//     $('.modal-trigger').leanModal({
-//         complete: function() {
-//             videos.each(function(){
-//                 this.pause();
-//             });
-//         }
-//     });
-// });
-
+// Modal
 $(document).ready (function ($) {
     $(function () {
 

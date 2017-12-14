@@ -58,7 +58,7 @@ p.to-season-details-p1 {
 	font-weight: bold;
 	font-family: 'Francois One', sans-serif;
 }
-.season-container {
+.season1-container {
 	background-color: #fff;
 	background: url('../img/s1bg.jpg');
     width: 100%;
@@ -69,6 +69,41 @@ p.to-season-details-p1 {
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+.season2-container {
+	background-color: #fff;
+	background: url('../img/s2bg.jpg');
+    width: 100%;
+    height: calc(100% - 1.71875rem);
+    overflow: hidden;
+	padding-top: 1em;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.season3-container {
+	background-color: #fff;
+	background: url('../img/s3bg.jpg');
+    width: 100%;
+    height: calc(100% - 1.71875rem);
+    overflow: hidden;
+	padding-top: 1em;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.season4-container {
+	background-color: #fff;
+	background: url('../img/s4bg.jpg');
+    width: 100%;
+    height: calc(100% - 1.71875rem);
+    overflow: hidden;
+	padding-top: 1em;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+
 .season-box {
 	height: 100px;
 	width: 100px;
