@@ -102,16 +102,23 @@ p.to-season-details-p1 {
 }
 /*season mobile*/
 @media only screen and (max-width: 480px) {
+	.card .card-content p {
+		font-size: 1.1em;
+		text-align: justify;
+	}
+	.card .card-content h5 {
+		font-size: 1.4em;
 
+	}
 }
 /*season tablet*/
 @media only screen and (min-width: 481px) and (max-width: 960px ) {
 	.card {
-		height: 430px;
+		height: 488px;
 	}
 }
 @media only screen and (min-width: 961px) {
 	.card {
-		height: 430px;
+		height: 488px;
 	}
 }
