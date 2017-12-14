@@ -175,7 +175,8 @@ h3.character {
 	background-color: #0000008a;
 }
 .collapsible-body {
-	background-color: #cacacae0;
+	background-color: #ffffffd4;
+	overflow: hidden;
 }
 img.logo {
 	height: 65px;
@@ -382,7 +383,7 @@ div.article-content {
 		font-size: 1em;
 	}
 	.char-details {
-		font-size: 1em;
+		font-size: 1.2em;
 	}
 	p.char-details {
 		text-indent: 50px;
@@ -390,6 +391,12 @@ div.article-content {
 	}
 	h5.latestUp > span {
 		font-size: .6em;
+	}
+	h3.character {
+		font-size: 6em;
+	}
+	.member-details {
+		font-size: .9em;
 	}
 }
 /*Tablet*/
@@ -412,7 +419,7 @@ div.article-content {
 	div.collapsible-header span.avatar-name {
 	    margin-left: 10px;
 	    line-height: 88px;
-	    font-size: 2.5em;
+	    font-size: 3em;
 	}
 	.carousel .carousel-item {
 		top: -65px;
@@ -450,6 +457,9 @@ div.article-content {
 	}
 	h5.latestUp > span {
 		font-size: .9em;
+	}
+	h3.character {
+		font-size: 10em;
 	}
 
 }
@@ -524,5 +534,8 @@ div.article-content {
 	}
 	.article-h5 {
 		font-size: 1.5em;
+	}
+	.article-details {
+		font-size: 1.3em;
 	}
 }
