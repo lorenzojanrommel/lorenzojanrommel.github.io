@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Day 3 | Exercise</title>
+	<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+	<style type="text/css">
+		@import compass;
+		#container {
+			width: 80%;
+			text-align: center;
+			margin: 0 auto;
+		}
+		#creature{
+ 			background:url(https://www.greensock.com/_img/codepen/bezierCreature/creature_red.png);
+  			width:27px;
+  			height:29px;
+  			position:absolute;
+  			z-index: 89999999999999;
+}
+		.img1 {
+			height: 100px;
+			width: 100px;
+			/*display: block;*/
+			position: relative;
+			float: left;
+			margin-top: 97px;
+		}
+		#run {
+			display: block;
+			margin: 0 auto;
+		}
+		#runningMonster {
+			margin: 0;
+		}
+		#changeImage {
+			margin-bottom: 10px;
+		}
+		button {
+			/*height: 30px;*/
+			margin-bottom: 10px;
+			background-color: #02024a;
+			color: #8a8a8a;
+			border-radius: 5px;
+			border: 1px solid #fff;
+			padding: 10px;
+		}
+
+		#bg {
+			width: 80%;
+			margin: 0 auto;
+			height: 200px;
+			background: url('img/bg.jpg');
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		button:hover
+		{
+		    box-shadow: 0px 0px 20px #000000;
+		    z-index: 2;
+		    -webkit-transition: all 200ms ease-in;
+		    -webkit-transform: scale(1.2);
+		    -ms-transition: all 200ms ease-in;
+		    -ms-transform: scale(1.2);   
+		    -moz-transition: all 200ms ease-in;
+		    -moz-transform: scale(1.2);
+		    transition: all 200ms ease-in;
+		    transform: scale(1.2);
+		}
+		.img2 {
+			height: 50px;
+			width: 50px;
+		}
+		.sr-only {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			padding: 0;
+			margin: -1px;
+			overflow: hidden;
+			clip: rect(0,0,0,0);
+			border: 0;
+			}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<h1 id="heading">Touch me!</h1>
+		<div id="creature"></div>
+		<div id="runningMonster">
+			<button id="run">Run Monster</button>
+			<h4>Select Your Monster</h4>
+			<button class="changeImage">Earthshaker</button>
+			<button class="changeImage">Pudge</button>
+			<button class="changeImage">Tuskar</button>
+			<button class="changeImage">Puck</button> <br>
+			<button class="changeImage">Krunch</button> <br>
+			<div id="bg">
+			<img class="img1" src="img/monster.png">
+			</div>
+			<button id="reset">Reset</button>
+		</div>
+
+	</div>
+	<script type="text/javascript">
+		//change color
+		$('#heading').click(function(){
+			$('#heading').css('color', 'red');
+		});
+
+		// $('html').mousemove(function(e){
+		// 	// console.log('moving:', e.pageX, e.pageY);
+		// 	$('#creature').css('left', e.pageX);
+		// 	$('#creature').css('top', e.pageY);
+		// });
+
+
+
+		//animate()
+		$( "#run" ).click(function() {
+		  $( ".img1" ).animate({
+		    left: 450
+		  }, {
+		    duration: 1000,
+		    step: function( now, fx ){
+		      $( ".img1" ).css( "left", now );
+		    }
+		  });
+		});
+
+		//change monster
+		$('.changeImage').click(function(){
+			var src = "";
+			switch($(this).html()){
+				case "Earthshaker":
+					src = "img/earth.png";
+					break;
+				case "Pudge":
+					src = "img/pudge.png";
+					break;
+				case "Tuskar":
+					src = "img/tusk.png";
+					break;
+				case "Puck":
+					src = "img/puck.png";
+					break;
+				case "Krunch":
+					src = "img/krunch.png";
+					break;
+				default:
+					alert('default');
+			};
+			$('.img1').attr('src', src)
+		});
+
+		$("#reset").click(function() {
+		  	$(".img1").css({
+		    // right: 450
+		    left:0
+		  }, {
+		    duration: 1000,
+		    step: function( now, fx ){
+		      $( ".img1" ).css( "right", now );
+		    }
+		  });
+		});
+	</script>
+</body>
+</html>

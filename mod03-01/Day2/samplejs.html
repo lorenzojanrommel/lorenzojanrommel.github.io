@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sample JS Day 2</title>
+</head>
+<body>
+	<h1>Sample JS Day 2</h1>
+
+	<p>Enter a number in the input box, and evaluate of the number is multiple of 3 AND 5.
+	if not, check if it's a multiple of 3, OR a multiple of 5.</p>
+	<input type="number" name="" id="num">
+	<button onclick="check()">Click Me!</button>
+	<script type="text/javascript">
+		function check(){
+			var number = document.getElementById('num').value;
+			var number1 = number%3;
+			var number2 = number%5;
+			if ((number1 == 0)&&(number2 == 0) && (number%2 == 0)) {
+				console.log(number + ' is even odd, multiple of 3 AND 5');
+			}
+			else if ((number1 == 0)&&(number2 == 0) && (number%2 != 0)) {
+				console.log(number + ' is odd multiple of 3 AND 5');
+			}
+			else if ((number1 != 0) && (number2 == 0) && (number%2 != 0)){
+				console.log(number +' is an odd, multiple of 5, but not of 3');
+			}
+			else if ((number1 != 0) && (number2 == 0) && (number%2 == 0)){
+				console.log(number +' is an even, multiple of 5, but not of 3');
+			}
+			else if ((number1 == 0) && (number2 != 0) && (number%2 != 0)){
+				console.log( number + ' is an odd, multiple of 3, but not of 5');
+			}
+			else if ((number1 == 0) && (number2 != 0) && (number%2 == 0)){
+				console.log( number + ' is an even, multiple of 3, but not of 5');
+			}
+			else {
+				console.log (number + ' not multiple of 5 and 3');
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sample 4 Day 3</title>
+	<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+</head>
+<style type="text/css">
+	#container {
+		width: 50%;
+		margin: 0 auto;
+	}
+	#heading {
+		text-align: center;
+	}
+	#input1 {
+		height: 30px;
+		margin-bottom: 10px;
+	}
+	.imgContainer {
+		text-align: center;
+		width: 100%;
+		background-color: #000;
+	}
+	button {
+		height: 30px;
+		margin-bottom: 10px;
+		background-color: #02024a;
+		color: #8a8a8a;
+		border-radius: 5px;
+		border: 1px solid #fff;
+	}
+/*	#img1 {
+		height: 500px;
+	}*/
+</style>
+<body>
+	<div id="container">
+	<h1 id="heading">Sample jQuery</h1>
+	<input type="text" name="" id="input1">
+	<button id="changeHeading">Change Heading</button>
+	<button id="hideBtn">Hide</button>
+	<button id="showBtn">Show</button>
+	<button id="toggleBtn">Hide/Show</button>
+	<button id="changeImageHeight">Change Image Height</button>
+	<button class="changeImage">Earthshaker</button>
+	<button class="changeImage">Pudge</button>
+	<button class="changeImage">Tuskar</button>
+	<button class="changeImage">Puck</button>
+	<button class="changeColorH">Blue</button>
+	<button class="changeColorH">Red</button>
+	<button class="changeColorH">Green</button>
+	<div class="imgContainer">
+	<img id="img1" src="img/tusk.png" alt="">
+	</div>
+	</div>
+	<script type="text/javascript">
+		//document.getElementsByTagName :: $
+		//style.display = none :: .hide()
+		//api.jQuery.com
+		// document.getElementsByTagName("heading").style.display = 'none';
+		// $('h1').html("jQuery");
+
+		// $('#btn').click(function(){
+		// 	alert("Hello");
+		// });
+
+		// document.getElementById("btn").onclick = function(){
+		// 	alert("Hello");
+		// };
+
+		// $('#changeHeading').click(function(){
+		// 	var x = $('#input1').val();
+		// 	$('#heading').html(x);
+		// });
+
+		$('.changeColorH').click(function(){
+			// $('#heading').css({"color":"red","font-family":"monospace" , "font-weight":"200"});
+			// $('#heading').css('color', 'red');
+			var color = "";
+			switch($(this).html()){
+				case "Blue":
+					color = 'blue';
+					break;
+				case "Red":
+					color = 'red';
+					break;
+				case "Green":
+					color = 'green';
+					break;
+			}
+			$('#heading').css({"color": color ,"font-family":"monospace" , "font-weight":"200"});
+		});
+		$('#changeImageHeight').click(function(){
+			$('#img1').attr('height', 100);
+		});
+		$('.changeImage').click(function(){
+			var src = "";
+			switch($(this).html()){
+				case "Earthshaker":
+					src = "img/earth.png";
+					break;
+				case "Pudge":
+					src = "img/pudge.png";
+					break;
+				case "Tuskar":
+					src = "img/tusk.png";
+					break;
+				case "Puck":
+					src = "img/puck.png";
+					break;
+				default:
+					alert('default');
+			};
+			$('#img1').attr('src', src)
+		});
+
+		$('#changeHeading').click(function(){
+			$('#heading').append($('#input1').val());
+			// $('#heading').html($('#heading').html() + $('#input1').val());
+		});
+
+		$('#toggleBtn').click(function(){
+			$("#heading").toggle();
+		});
+
+		$('#hideBtn').click(function(){
+			$('#heading').hide();
+		});
+
+		$('#showBtn').click(function(){
+			$('#heading').show();
+		});
+
+	</script>
+</body>
+</html>

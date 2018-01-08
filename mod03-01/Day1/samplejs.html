@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Sample for JS</title>
+	<style type="text/css">
+		.keypad {
+			height: 50px;
+			width: 50px;
+			font-weight: bold;
+		}
+		.display {
+			height: 50px;
+			width: 209px;
+			font-size: 20px;
+			text-align: right;
+			background-color: #ececec;
+		}
+
+	</style>
+</head>
+
+<body>
+
+	 <h1 id="heading"> Sample JS</h1> <br>
+	 Month: <select id="month" onchange="showMonth()">
+	 	<option selected disabled>Select Month</option>
+	 	<option>1</option>
+	 	<option>2</option>
+	 	<option>3</option>
+	 	<option>4</option>
+	 	<option>5</option>
+	 	<option>6</option>
+	 	<option>7</option>
+	 	<option>8</option>
+	 	<option>9</option>
+	 	<option>10</option>
+	 	<option>11</option>
+	 	<option>12</option>
+	 	<option>13</option>
+	 </select>
+	 <script type="text/javascript">
+	 	function showMonth(){
+	 		var num = document.getElementById("month").value;
+	 		var month = [" ","January",
+	 					"February",
+	 					"March",
+	 					"April",
+	 					"May",
+	 					"June",
+	 					"July",
+	 					"August",
+	 					"September",
+	 					"October",
+	 					"November",
+	 					"December",
+	 					"None",
+	 					];
+	 		console.log(month[num]);
+	 		document.getElementById('heading').innerHTML = month[num];
+	 		// switch(num) {
+	 		// 	case "1":
+	 		// 		console.log('January');
+	 		// 		break;
+	 		// 	case "2":
+	 		// 		console.log('February');
+	 		// 		break;
+	 		// 	case "3":
+	 		// 		console.log('March');
+	 		// 		break;
+	 		// 	case "4":
+	 		// 		console.log('April');
+	 		// 		break;
+	 		// 	case "5":
+	 		// 		console.log('May');
+	 		// 		break;
+	 		// 	case "6":
+	 		// 		console.log('June');
+	 		// 		break;
+	 		// 	case "7":
+	 		// 		console.log('July');
+	 		// 		break;
+	 		// 	case "8":
+	 		// 		console.log('August');
+	 		// 		break;
+	 		// 	case "9":
+	 		// 		console.log('September');
+	 		// 		break;
+	 		// 	case "10":
+	 		// 		console.log('October');
+	 		// 		break;
+	 		// 	case "11":
+	 		// 		console.log('November');
+	 		// 		break;
+	 		// 	case "12":
+	 		// 		console.log('December');
+	 		// 		break;
+	 		// 	default:
+	 		// 	 	console.log	("none");
+	 		// }
+ 			
+	 	}
+	 </script>
+	 <p id="solution"></p>
+	 <input type="text" name="" id="mdas" class="display" placeholder="0"> <br> <br>
+	 <button class="keypad" onclick="display(this.innerHTML)">7</button>
+	 <button class="keypad" onclick="display(this.innerHTML)">8</button>
+	 <button class="keypad" onclick="display(this.innerHTML)">9</button>
+	 <button class="keypad" onclick="display(this.innerHTML)">/</button> <br> <br>
+	 <button class="keypad" onclick="display(this.innerHTML)">4</button>
+	 <button class="keypad" onclick="display(this.innerHTML)">5</button>
+	 <button class="keypad" onclick="display(this.innerHTML)">6</button>
+	 <button class="keypad" onclick="display(this.innerHTML)">*</button> <br> <br>
+	 <button class="keypad" onclick="display(this.innerHTML)">1</button>
+	 <button class="keypad" onclick="display(this.innerHTML)">2</button>
+	 <button class="keypad" onclick="display(this.innerHTML)">3</button>
+	 <button class="keypad" onclick="display(this.innerHTML)">-</button> <br> <br>
+	 <button class="keypad" onclick="display(this.innerHTML)">0</button>
+	 <button class="keypad" onclick="display(this.innerHTML)">.</button>
+	 <button class="keypad" onclick="equal(this.innerHTML)">=</button>
+	 <button class="keypad" onclick="display(this.innerHTML)">+</button> <br> <br>
+	 <button class="keypad" onclick="clr()">C</button>
+	 <button class="keypad" onclick="back()">x</button>
+	 <button class="keypad" onclick="gl(this.innerHTML)"><5></button> 
+	 <button class="keypad" onclick="oddOrEven()">o/e</button> <br> <br>
+
+	 <input type="number" id="input1"> <br> <br>
+	 <input type="number" id="input2"> <br> <br>
+	 <button id='btn' onclick="changeHTML('hello 1')">Click me 1!</button>
+	 <button id='btn' onclick="changeHTML(this.innerHTML)">Click me 2!</button>
+	 <button id='btn' onclick="changeHTML(this.id)">Click me 3!</button>
+
+	 <script type="text/javascript">
+	 	function display (num) {
+	 		document.getElementById('mdas').value += num;
+	 		// document.getElementById('heading').innerHTML = document.getElementById('heading').innerHTML + num;
+
+	 	}
+/*	 	function changeHTML(input) {
+	 		alert (input);
+	 		// var input1 = parseInt(document.getElementById("input1").value);
+	 		// var input2 = parseInt(document.getElementById("input2").value);
+	 		// document.getElementById('heading').innerHTML = input1 + input2;
+	 	}*/
+
+	 	function equal(){
+	 		document.getElementById('mdas').value = eval(document.getElementById('mdas').value)
+	 	}
+	 	function solution() {
+	 		document.getElementById('solution').innerHTML = eval(document.getElementById('mdas').value);
+	 	}
+	 	function clr() {
+	 		document.getElementById('mdas').value = " ";
+	 	}
+	 	function gl() {
+	 		var num = document.getElementById('mdas').value;
+	 		if (num < 5) {
+	 			console.log (num + " is less than 5");
+	 		}
+	 		else if (num == 5) {
+	 			console.log (num + " is equal to 5");
+	 		}
+			else {
+	 			console.log (num + " is greater than 5");
+	 		}
+	 	}
+	 	function oddOrEven(){
+	 		var num = document.getElementById('mdas').value;
+	 		if (num%2){
+	 			console.log (num + " is Odd");
+	 		}
+	 		else {
+	 			console.log (num + " is Even")
+	 		}
+	 	}
+	 	function back(){
+	 		var val = document.getElementById('mdas').value;
+	 		document.getElementById('mdas').value = val.substr(0, val.length - 1);
+	 	}
+	 </script>
+</body>
+</html>

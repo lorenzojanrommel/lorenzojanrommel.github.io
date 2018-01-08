@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE-Edge">
+	<title>Sample 2 Day 2</title>
+	<style type="text/css">
+		#as {
+			font-family: monospace;
+			text-align: center;
+			margin-top: 10px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Sample 2 Day 2</h1>
+	<h2 id="heading">BMI</h2>
+	<label for="weight">Weight:</label>
+	<input id="weight" type="number" name="weight">
+	<select id="mass" onchange="massOption()">
+		<option>Kilogram</option>
+		<option>lbs</option>
+	</select>
+	<label for="height">Height:</label>
+	<input id="height" type="number" name="height">
+	<select id="length" onchange="lengthOption()">
+		<option>Meter</option>
+		<option>Inch</option>
+	</select>
+	<button onclick="compute()">Compute</button>
+	<div id="as"></div>
+	<input type="number" name="" id="ass">
+	<button id="btn" onclick="display()">Go Loop!</button>
+	<script type="text/javascript">
+		function massOption(ans){
+			var m = document.getElementById('mass').value;
+			var w = parseFloat(document.getElementById('weight').value);
+			if (m == 'lbs') {
+				var wlbs = w*0.453592;
+				return wlbs;
+			}
+			else {
+				var wkgs = w*1;
+				return wkgs;
+			}
+		}
+		function lengthOption(){
+			var l = document.getElementById('length').value;
+			var h = parseFloat(document.getElementById('height').value);
+			if (l == 'Inch') {
+				var lInch = h*0.0254;
+				return lInch;
+			}
+			else {
+				var lMeter = h*1;
+				return lMeter;
+			}
+		}
+		function compute(){
+			var ww = massOption();
+			var hh = lengthOption();
+			var ans = ww/(hh*hh);
+			if (ans <= 18.4) {
+				document.getElementById('heading').innerHTML = ans.toFixed(2) + ' Underweight';
+			}
+			else if ((ans >= 18.5) && (ans <= 24.9)){
+				document.getElementById('heading').innerHTML = ans.toFixed(2) + ' Normal Weight';
+			}
+			else if ((ans >= 25.0) && (ans <= 29.9)){
+				document.getElementById('heading').innerHTML = ans.toFixed(2) + ' Overweight';
+			}
+			else if ((ans >= 30.0) && (ans <= 34.9)) {
+				document.getElementById('heading').innerHTML = ans.toFixed(2) + ' Class 1 Obesity';
+			}
+			else {
+				console.log(ans + ' class 2');
+			}
+			
+		}
+
+
+		var colors = [
+			"Red",
+			"Orange",
+			"Yellow",
+			"Green",
+			"Violet",
+			"Indigo",
+			"Blue"
+		];
+		function display(){
+			var a = document.getElementById('ass').value;
+		for (var x = 0; x < a-1; x++){
+			for (var y= 0; y < a-1; y++) {
+			document.getElementById("as").innerHTML += " *";
+			console.log("x: "+x+", y" +y);
+			}
+			document.getElementById("as").innerHTML += " *<br>";
+		}
+		// var j = parseInt(document.getElementById('ass')).value;
+	
+		
+		}
+
+	</script>
+</body>
+</html>
