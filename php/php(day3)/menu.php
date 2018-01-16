@@ -79,9 +79,6 @@
             
           </div>
         </div>
-        <div class="modal-footer clearfix">
-          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
-        </div>
       </div>
 
       <!-- delete modal -->

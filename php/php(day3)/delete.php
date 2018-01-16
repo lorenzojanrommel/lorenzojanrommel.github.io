@@ -6,7 +6,7 @@
 	$items = json_decode($items, true);
 
 	//delete task form the array $todos
-	array_splice($items, $index, 1);
+	unset($items[$index]);
 
 
 	// var_dump($todos);
