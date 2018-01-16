@@ -34,3 +34,11 @@ h5 {
 .row .col.s4 {
 	padding-top: 10px;
 }
+
+.btn{
+	padding: 0 1.2em;
+}
+
+.atc {
+	margin-left: 7px;
+}

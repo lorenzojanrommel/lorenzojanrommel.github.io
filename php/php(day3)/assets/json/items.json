@@ -1,8 +1,8 @@
 [
     {
         "name": "Apple",
-        "description": "This is Apple",
-        "price": 1,
+        "description": " This is Apple",
+        "price": "50",
         "img": "assets\/img\/fruits\/apple.png",
         "category": "fruit"
     },
@@ -28,16 +28,16 @@
         "category": "shake"
     },
     {
-        "name": "Orange",
-        "description": "This is Orange",
-        "price": 1,
+        "name": "Oranging",
+        "description": " This is Orange",
+        "price": "1",
         "img": "assets\/img\/fruits\/orange.png",
         "category": "fruit"
     },
     {
-        "name": "Grapes",
-        "description": "This is Grapes",
-        "price": 1,
+        "name": "Grapesing",
+        "description": "  This is Grapes",
+        "price": "100",
         "img": "assets\/img\/fruits\/grapes.png",
         "category": "fruit"
     }

@@ -1,10 +1,4 @@
 
-<style type="text/css">
-  .atc {
-    margin-left: 12px;
-  }
-
-</style>
 
 <?php
  $string = file_get_contents("assets/json/items.json");
@@ -68,14 +62,39 @@
       echo "</div>";
       echo "</div>";
       if (isset($_SESSION['username']) && $_SESSION['username'] == 'admin') {
-      echo "<a href='edit.php?index=$index'><button class='btn blue accent-1 atc'> Edit / Delete </button> </a>";
+      echo "<button class='btn blue accent-1 atc modal-trigger render_modal' href='#modal1' data-index='$index'> Edit</button>"; 
+      echo "<button class='btn red atc modal-trigger delete_render_modal' href='#delete_modal' data-index='$index'> Delete </button>";
       }elseif (isset($_SESSION['username'])) {
       echo "<button class='btn light-green accent-3 atc'> Add to cart </button>";
       }
       echo "</div>";
     };
     };
+    ?>
+    <!-- Modal Structure -->
+      <div id="modal1" class="modal modal-fixed-footer">
+        <div class="modal-content">
+          <h4>Modal Header</h4>
+          <div class="modal-body" id="modal-body">
+            
+          </div>
+        </div>
+        <div class="modal-footer clearfix">
+          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
+      </div>
 
+      <!-- delete modal -->
+      <!-- Modal Structure -->
+      <div id="delete_modal" class="modal modal-fixed-footer">
+        <div class="modal-content">
+          <h4>Are you sure you want to delete this item?</h4>
+          <div class="delete-modal-body" id="delete-modal-body">
+            
+          </div>
+        </div>
+      </div>
+      <?php
     echo "</div>";
     echo "</div>";
     echo "</div>";
@@ -84,3 +103,48 @@
 
   require "template.php"
 ?>
+
+<script type="text/javascript">
+    $(".render_modal").click(function(){
+      var index = $(this).data('index');
+      // $.post('render_modal_body_endpoint.php', //url api
+      //   {  index : index }, //variable (key-value pairs to be passed)
+      //   function(data){ //callback function 
+      //     $('#modal-body').html(data);
+
+      //   });
+
+        $.ajax({
+          method : 'post',
+          url: 'render_modal_body_endpoint.php',
+          data: {
+            index : index
+          },
+          success: function(data){
+            $('#modal-body').html(data);
+          }
+        });
+      });
+
+      //delete modal
+      $(".delete_render_modal").click(function(){
+      var index = $(this).data('index');
+      // $.post('render_modal_body_endpoint.php', //url api
+      //   {  index : index }, //variable (key-value pairs to be passed)
+      //   function(data){ //callback function 
+      //     $('#modal-body').html(data);
+
+      //   });
+
+        $.ajax({
+          method : 'post',
+          url: 'delete_modal_body_endpoint.php',
+          data: {
+            index : index
+          },
+          success: function(data){
+            $('#delete-modal-body').html(data);
+          }
+        });
+      });
+</script>
