@@ -1,4 +1,10 @@
 
+<style type="text/css">
+  .qttyItem {
+    width: 134px;
+    text-align: right;
+}
+</style>
 
 <?php
  $string = file_get_contents("assets/json/items.json");
@@ -40,7 +46,7 @@
     <button class="btn"> Sort By:</button>
     </form>
   </div>
-
+  <a href=""></a>
 
   <?php
  
@@ -65,7 +71,10 @@
       echo "<button class='btn blue accent-1 atc modal-trigger render_modal' href='#modal1' data-index='$index'> Edit</button>"; 
       echo "<button class='btn red atc modal-trigger delete_render_modal' href='#delete_modal' data-index='$index'> Delete </button>";
       }elseif (isset($_SESSION['username'])) {
+      echo "<form method='post' action='cart_item_endpoint.php?index=$index'>";
+      echo "QTTY: <input type='number' min='o' class='qttyItem' name='item_qtty'>";
       echo "<button class='btn light-green accent-3 atc'> Add to cart </button>";
+      echo "</form>";
       }
       echo "</div>";
     };

@@ -1,22 +1,22 @@
 [
     {
         "name": "Apple",
-        "description": " This is Apple",
-        "price": "50",
+        "description": "  This is Apple",
+        "price": "45",
         "img": "assets\/img\/fruits\/apple.png",
         "category": "fruit"
     },
     {
         "name": "Apple Juice",
-        "description": "This is Apple Juice",
-        "price": 1,
+        "description": " This is Apple Juice",
+        "price": "50",
         "img": "assets\/img\/juice\/juiceapple.png",
         "category": "juice"
     },
     {
         "name": "Banana",
-        "description": "This is Banana",
-        "price": 1,
+        "description": " This is Banana",
+        "price": "100",
         "img": "assets\/img\/fruits\/banana.png",
         "category": "fruit"
     },

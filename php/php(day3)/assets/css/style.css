@@ -42,3 +42,8 @@ h5 {
 .atc {
 	margin-left: 7px;
 }
+
+.qttyItem {
+	width: 134px;
+    text-align: right;
+}
