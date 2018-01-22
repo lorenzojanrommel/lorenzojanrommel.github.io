@@ -1,0 +1,44 @@
+[
+    {
+        "name": "Apple",
+        "description": "  This is Apple",
+        "price": "45",
+        "img": "assets\/img\/fruits\/apple.png",
+        "category": "fruit"
+    },
+    {
+        "name": "Apple Juice",
+        "description": " This is Apple Juice",
+        "price": "50",
+        "img": "assets\/img\/juice\/juiceapple.png",
+        "category": "juice"
+    },
+    {
+        "name": "Banana",
+        "description": " This is Banana",
+        "price": "100",
+        "img": "assets\/img\/fruits\/banana.png",
+        "category": "fruit"
+    },
+    {
+        "name": "Banana Shake",
+        "description": "This is Banana Shake",
+        "price": 1,
+        "img": "assets\/img\/shake\/shakebanana.png",
+        "category": "shake"
+    },
+    {
+        "name": "Oranging",
+        "description": " This is Orange",
+        "price": "1",
+        "img": "assets\/img\/fruits\/orange.png",
+        "category": "fruit"
+    },
+    {
+        "name": "Grapesing",
+        "description": "  This is Grapes",
+        "price": "100",
+        "img": "assets\/img\/fruits\/grapes.png",
+        "category": "fruit"
+    }
+]
