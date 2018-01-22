@@ -1,17 +1,22 @@
 <?php
 	$index = $_POST['index'];
-	$string = file_get_contents("assets/json/items.json");
-	$items = json_decode($string, true);
-	$img = $items[$index]['img'];
-	$name = $items[$index]['name'];
-	$description = $items[$index]['description'];
-	$price = $items[$index]['price'];
+	// $string = file_get_contents("assets/json/items.json");
+	// $items = json_decode($string, true);
+    require 'connectiondb.php';
+    $sql = "SELECT * FROM items WHERE id = $index";
+    $results = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($results);
+    extract($row);
+	// $img = $items[$index]['img'];
+	// $name = $items[$index]['name'];
+	// $description = $items[$index]['description'];
+	// $price = $items[$index]['price'];
 
     echo "<div class='col s4'>";
     echo "<form method='post' action='delete.php?index=$index'>"; //to save changes
     echo "<div class='card'>";
     echo "<div class='card-img'>";
-    echo "<img src='".$img."'><br>";
+    echo "<img src='".$image."'><br>";
     echo "</div>";
     echo "<div class='card-content'>";
     echo "<h5>$name</h5>";

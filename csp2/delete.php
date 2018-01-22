@@ -2,9 +2,12 @@
 	
 	$index = $_GET['index'];
 
-	$items = file_get_contents('assets/json/items.json');
-	$items = json_decode($items, true);
+	// $items = file_get_contents('assets/json/items.json');
+	// $items = json_decode($items, true);
 
+	require 'connectiondb.php';
+	$sql = "DELETE FROM items WHERE id = $index";
+	mysqli_query($conn, $sql) or die(mysqli_error($conn));
 	//delete task form the array $todos
 	unset($items[$index]);
 
