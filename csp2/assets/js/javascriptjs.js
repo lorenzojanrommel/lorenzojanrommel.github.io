@@ -52,3 +52,7 @@ $('form').on('click', '#save', function(event){
       });
   event.stopPropagation();
 });
+
+$(document).ready(function() {
+    $('select').material_select();
+  });

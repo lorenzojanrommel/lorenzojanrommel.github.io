@@ -6,7 +6,8 @@ session_start();
 // print_r($users);
 // exit();
 	require 'connectiondb.php';
-	
+if (isset($_POST['login'])) {
+
 	$username = $_POST['username'];
 	$password = sha1($_POST['password']);
 
@@ -25,7 +26,18 @@ session_start();
 		echo "Failed to login. Incorrect login Credentials <br>";
 		echo "please login again <a href='login.php'> Here </a>";
 	}
+}
 
+if (isset($_POST['register'])) {
+	$username = $_POST['username'];
+	$sql = "SELECT * FROM users WHERE username = '$username'";
+	$results = mysqli_query($conn, $sql);
+	if (mysqli_num_rows($results)>0) {
+		echo "invalid";
+	}else {
+		echo "valid";
+	}
+}
 // if(isset($users[$username]) && $users[$username] == $password) {
 // 	$_SESSION['username'] = $username;
 // 	header('location: home.php');
@@ -33,9 +45,4 @@ session_start();
 // 	echo "Failed to login. Incorrect login Credentials <br>";
 // 	echo "please login again <a href='login.php'> Here </a>";
 // }
-
-
 ?>
-
-
-	

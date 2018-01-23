@@ -19,7 +19,7 @@
 	  <input type="checkbox" id="test5" />
       <label for="test5">Red</label>
   	 <div class="input-field col s12">
-	  <button type="submit" class="btn waves-effect green accent-2">Submit</button>
+	  <input type="submit" name='login' class="btn waves-effect green accent-2" value='Login'>
   	</div>
 	</form>
 <?php } ?>

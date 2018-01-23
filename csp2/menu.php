@@ -26,6 +26,9 @@
     // }
     $filter = isset($_GET['category']) ? $_GET['category'] : 'All';
     require 'connectiondb.php'; //
+    if(isset($_SESSION['role']) && $_SESSION['role']=='admin'){
+    echo "<button class='btn modal-trigger' id='add_item'  href='#modal1'>Add Item</button>";
+    }
     ?>
     <h4 class="">Category:</h4>
     <div class="input-field col s12">
@@ -124,6 +127,20 @@
 ?>
 
 <script type="text/javascript">
+    $("#add_item").click(function(){
+
+    $.ajax({
+      method: 'post',
+      url: 'render_modal_body_endpoint.php',
+      data: {
+        add : true,
+      },
+      success: function(data){
+        // alert(data)
+        $("#modal-body").html(data);
+      }
+    })
+  })
     $(".render_modal").click(function(){
       var index = $(this).data('index');
       // $.post('render_modal_body_endpoint.php', //url api
@@ -137,6 +154,7 @@
           method : 'post',
           url: 'render_modal_body_endpoint.php',
           data: {
+            edit :true,
             index : index
           },
           success: function(data){
@@ -159,6 +177,7 @@
           method : 'post',
           url: 'delete_modal_body_endpoint.php',
           data: {
+            edit : true,
             index : index
           },
           success: function(data){

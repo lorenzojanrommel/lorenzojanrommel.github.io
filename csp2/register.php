@@ -31,27 +31,49 @@
       <label for="test52">Remember Me</label>
 	</div>
 	<div class="input-field col s12">
-	<input type="submit" name="submit" id="submit" class="btn green accent-2 validate" value="Register" disabled>
+	<input type="submit" name="register" id="submit" class="btn green accent-2 validate" value="Register" disabled>
 	</div>
 </form>
 
 <script type="text/javascript">
-	var users;
-	$.getJSON("assets/json/users.json", function(json){
-		users = json;
-		// console.log(users);
-	})
+	// var users;
+	// $.getJSON("assets/json/users.json", function(json){
+	// 	users = json;
+	// 	// console.log(users);
+	// })
+
+
 
 	$('input[name=username]').on('input', function(){
 		var username = $('input[name=username]').val();
-		if (typeof users[username] !== 'undefined') {
-			$('#username_error').css('color','red');
-			$('#username_error').html('username exists');
-		} else {
-			$('#username_error').css('color','green');
-			$('#username_error').html('available');
-		}
-	})	
+		 $.ajax({
+          method : 'post',
+          url: 'authenticate.php',
+          data: {
+          	register : true,
+            username : username
+          },
+          success: function(data){
+            // $('#modal-body').html(data);
+            if (data == 'invalid') {
+            	$('#username_error').css('color','red');
+				$('#username_error').html('username exists');
+            }else {
+            	$('#username_error').css('color','green');
+				$('#username_error').html('available');
+            }
+    		// console.log(data);
+          }
+        });
+      });
+
+	// 	if (typeof users[username] !== 'undefined') {
+	// 		$('#username_error').css('color','red');
+	// 		$('#username_error').html('username exists');
+	// 	} else {
+			
+	// 	}
+	// })	
 	function validate(){
 	var pass = $('#pass').val();
 	var cpass = $('#cpwd').val();
@@ -60,11 +82,12 @@
 			$('#output').css("color", "red");
 			$('#submit').attr('disabled','disabled')
 			return false;
-		}else
+		}else if (pass = cpass){
 			$('#output').html("Password Matched.");
 			$('#output').css("color", "green");
 			$('#submit').removeAttr('disabled');
 		return true;
+		}
 		}
 
 
