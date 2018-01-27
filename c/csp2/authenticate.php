@@ -9,11 +9,16 @@ if (isset($_POST['login'])) {
 	if (mysqli_num_rows($results)>0) {
 		$row = mysqli_fetch_assoc($results);
 		$_SESSION['username'] = $username;
+		$_SESSION['user_id'] = $row['id'];
 		$_SESSION['user_level'] = $row['user_level'];
 		$_SESSION['user_status'] = $row['user_status'];
 		$_SESSION['fname'] = $row['first_name'];
 		$_SESSION['lname'] = $row['last_name'];
+		if (isset($_SESSION['user_level']) && $_SESSION['user_level'] == 1) {
+		header('location: dashboard.php');
+		}else{
 		header('location: home.php');
+		}
 	}else {
 		echo "Failed to login. Incorrect login Credentials <br>";
 		echo "please login again <a href='login.php'> Here </a>";

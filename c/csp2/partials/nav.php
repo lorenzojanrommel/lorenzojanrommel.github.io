@@ -12,9 +12,9 @@ $username = isset($_SESSION['username']) ? //if
       <ul class="right hide-on-med-and-down">
       <?php if (isset($_SESSION['username']) && $_SESSION['user_level'] == 1 && $_SESSION['user_status'] == 1) {
       ?>
-        <li><a href="home.php">Dashboard</a></li>
-        <li><a href="menu.php">Users List</a></li>
-        <li><a href="menu.php">Add Admin</a></li>
+        <li><a href="dashboard.php">Dashboard</a></li>
+        <li><a href="user_list.php">Users List</a></li>
+        <li><a href="register_admin.php">Add Admin</a></li>
         <?php 
           if(isset($_SESSION['username'])){
             echo '<li><a href="#" class="dropdown-button" data-activates="logout_dropdown"><i class="fa fa-user-o" aria-hidden="true"></i> '. $_SESSION['fname']. ' <i class="fa fa-sort-desc" aria-hidden="true"></i></a></li>';
@@ -105,6 +105,6 @@ $username = isset($_SESSION['username']) ? //if
       </div>
     </div>
   </div>
-
+<script type="text/javascript" src="assets/js/customjs.js"></script>
 
           

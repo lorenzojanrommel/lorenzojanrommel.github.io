@@ -18,7 +18,7 @@
 
       }else {
     ?>
-	<form action="authenticate.php" method="POST">
+  <form action="authenticate.php" method="POST">
         <div class="input-field col s12">
           <input id="text" name="username" type="text" class="validate">
           <label for="username">Username</label>

@@ -41,3 +41,10 @@ li.logout-user {
 .signup:hover {
 	text-decoration: underline;
 }
+.product-image {
+	height: 200px;
+	/*width: 200px;*/
+	width: 100%;
+	/*padding: 23px;*/
+	/*background-color: #fff3e0;*/
+}
