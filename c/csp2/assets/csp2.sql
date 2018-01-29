@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.6.5.2
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 27, 2018 at 05:59 PM
--- Server version: 10.1.9-MariaDB
--- PHP Version: 5.6.15
+-- Generation Time: Jan 29, 2018 at 09:31 AM
+-- Server version: 10.1.21-MariaDB
+-- PHP Version: 7.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -80,7 +80,7 @@ CREATE TABLE `products` (
   `price` varchar(255) NOT NULL,
   `category_id` int(11) NOT NULL,
   `owner_user_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
 --
 -- Dumping data for table `products`
@@ -88,7 +88,7 @@ CREATE TABLE `products` (
 
 INSERT INTO `products` (`id`, `name`, `description`, `image`, `price`, `category_id`, `owner_user_id`) VALUES
 (1, 'Dekalb - 9132', ' Dekalb', 'assets/img/dekalb-9132.jpg', '2000', 1, 3),
-(11, 'Dekalb 6919', ' Dekalb 6919', 'assets/img/dekalb6919.jpg', '2000', 1, 3);
+(2, 'Dekalb 6919', ' Dekalb 6919', 'assets/img/dekalb6919.jpg', '2000', 1, 3);
 
 -- --------------------------------------------------------
 
@@ -120,14 +120,15 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `mobile_number`, 
 (1, 'Jan Rommel', 'Lorenzo', 'lorenzojanrommel@gmail.com', '09122235050', '1997-01-24', 'm', 'camiling, tarlac', 'admin', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 1, 1, '2018-01-25 09:11:37'),
 (2, 'JR', 'Lorenzon', 'misterfewwords@gmail.com', '0912223213213', '1993-12-05', 'm', 'qweweqwewqeqwewqeq', 'customer', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 3, 1, '2018-01-25 11:33:20'),
 (3, 'JR Seller', 'Seller', 'jrseller@gmail.com', '09123331345', '2018-01-02', 'm', 'jr address', 'seller', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 2, 1, '2018-01-25 12:59:03'),
-(4, 'Lina', 'Lorenzo', 'linalorenzo@gmail.com', '09123456781', '2018-01-02', 'f', 'lina_address', 'lina', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 3, 1, '2018-01-25 15:47:54'),
+(4, 'Fiery', 'Queen', 'linaqueen@gmail.com', '09123456781', '2018-01-02', 'f', 'Lina_address', 'lina', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 2, 1, '2018-01-29 05:17:52'),
 (6, 'Maiden', 'Slark', 'maidenslark@gmail.com', '0912345668', '25 January, 2018', 'f', 'maidenslarkaddress', 'maidenslark', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 2, 1, '2018-01-25 15:49:50'),
 (7, 'Akasha', 'Pain', 'akashapain@gmail.com', '012321312321', '26 January, 2018', 'f', 'akashapainaddress', 'akasha', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 2, 1, '2018-01-25 16:05:48'),
 (8, 'Monet', 'Monet', 'monetmonet@gmaill.com', '0912321321234', '26 January, 2018', 'm', 'monetadress', 'monet', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 3, 1, '2018-01-25 16:12:53'),
-(9, 'fy', 'fy', 'fy@gmail.com', '0912321321', '26 January, 2018', 'm', 'fyadress', 'fy', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 2, 1, '2018-01-25 16:15:05'),
+(9, 'Fy', 'Fy', 'fy@gmail.com', '0912321321', '26 January, 2018', 'm', 'Fyadress', 'fy', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 2, 1, '2018-01-29 08:10:13'),
 (10, 'mister', 'few', 'misterfew@gmail.com', '091521155474', '28 January, 2018', 'm', 'misterfewaddress', 'misterfew', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 2, 1, '2018-01-27 16:46:35'),
-(11, 'few', 'mister', 'fewmister@gmail.com', '0986656565', '28 January, 2018', 'm', 'fewmisteraddress', 'fewmister', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 1, 1, '2018-01-27 16:52:13'),
-(14, 'puck', 'wonder', 'puckwonder@gmail.com', '09979797715', '28 January, 2018', 'm', 'puckwonderaddress', 'puckwonder', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 1, 1, '2018-01-27 16:56:48');
+(11, 'Few', 'Mister Words', 'fewmister@gmail.com', '0986656565', '28 January, 2018', 'm', 'Fewmisteraddress', 'fewmister', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 2, 1, '2018-01-29 05:15:48'),
+(14, 'Pucking', 'Wonder', 'puckwonder@gmail.com', '09979797715', '28 January, 2018', 'm', 'Puckwonderaddress', 'puck', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 1, 2, '2018-01-29 07:24:56'),
+(16, 'Slark', 'Slark', 'slark@gmail.com', '0695656665989', '29 January, 2018', 'm', 'Slark_address', 'slark', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 2, 2, '2018-01-29 07:31:48');
 
 -- --------------------------------------------------------
 
@@ -253,7 +254,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `user_level`
 --

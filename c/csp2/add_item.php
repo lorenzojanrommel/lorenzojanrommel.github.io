@@ -10,7 +10,7 @@ $description = $_POST['description'];
 $image = $target_file;
 $price = $_POST['price'];
 $category = $_POST['category_id'];
-$owner = $_SESSION['id'];
+$owner = $_SESSION['user_id'];
 
 $sql = "INSERT INTO products (name, description, image, price, category_id, owner_user_id) VALUES ('$name', '$description', '$image','$price', '$category', '$owner')";
 mysqli_query($conn, $sql) or die (mysqli_error($conn));

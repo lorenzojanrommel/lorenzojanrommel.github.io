@@ -14,14 +14,17 @@ if (isset($_POST['login'])) {
 		$_SESSION['user_status'] = $row['user_status'];
 		$_SESSION['fname'] = $row['first_name'];
 		$_SESSION['lname'] = $row['last_name'];
-		if (isset($_SESSION['user_level']) && $_SESSION['user_level'] == 1) {
+		if (isset($_SESSION['user_level']) && $_SESSION['user_level'] == 1 && $_SESSION['user_status'] == 1) {
 		header('location: dashboard.php');
-		}else{
+		}elseif(($_SESSION['user_level'] == 2 || $_SESSION['user_level'] == 3) && $_SESSION['user_status'] == 1){
+		header('location: home.php');
+		}elseif ($_SESSION['user_status'] == 2) {
+		// header('location: logout.php');
 		header('location: home.php');
 		}
 	}else {
-		echo "Failed to login. Incorrect login Credentials <br>";
-		echo "please login again <a href='login.php'> Here </a>";
+		
+		header('location: home.php');
 	}
 }
 if (isset($_POST['register'])) {
@@ -35,3 +38,11 @@ if (isset($_POST['register'])) {
 	}
 }
 ?>
+
+
+<script type="text/javascript">
+	$(document).ready(function(){
+    $('.tooltipped').tooltip({delay: 50});
+  })
+</script>
+		 	<!-- alert('Your Account Has Been Deactivate. Contact us for more info'); -->

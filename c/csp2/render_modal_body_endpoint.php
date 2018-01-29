@@ -41,13 +41,13 @@
     $row = mysqli_fetch_assoc($results);
     extract($row);
 
-    echo "<div class='col s3'>";
-    echo "</div>";
-    echo "<div class='col s6'>";
+    // echo "<div class='col s3'>";
+    // echo "</div>";
+    // echo "<div class='col s6'>";
     echo "<form method='post' action='edit.php?index=$index'>"; //to save changes
     // echo "<div class='card'>";
     // echo "<div class='card-img'>";
-    echo "<img src='".$image."'><br>";
+    echo "<img class='product-image' src='".$image."'><br>";
     // echo "</div>";
     echo "<div class='card-content'>";
     echo "Name: <input type='text' name='name' value='$name'><br>";
@@ -58,7 +58,7 @@
     // echo "</div>";
     // echo "</div>";
     echo "</form>";
-    echo "</div>";
+    // echo "</div>";
     echo "</div>";
     }
 ?>

@@ -6,7 +6,7 @@
  	$filter = isset($_GET['category']) ? $_GET['category'] : 'All';
     require 'connectdb.php'; //
     if(isset($_SESSION['user_level']) && $_SESSION['user_level']==2){
-    echo "<button class='btn modal-trigger' id='add_item'  href='#modal1'>Add Item</button>";
+    echo "<button class='btn modal-trigger' id='add_item'  href='#modal2'>Add Item</button>";
 		};
 		?>
 	<h4 class="">Category:</h4>
@@ -46,35 +46,55 @@
       echo "<div class='card-img'>";
       echo "<img class='product-image' src='".$item['image']."'><br>";
       echo "</div>";
-      echo "<div class='card-content'>";
-      echo "<h5 style='color:#ab47bc;'>" .$item['name']. "</h5><br>";
+      echo "<div class='card-content product-content'>";
+      echo "<div class='row'>";
+      echo "<div class='col s12 product-name'>";
+      echo "<strong>". $item['name'] . "</strong>";
+      echo "</div>";
+      echo "<div class='col s12 product-description'>";
       echo $item['description']. "<br>";
-      echo "<span style='color:#0d47a1;'> Price: </span> ₱" .$item['price'];
+      echo "</div>";
+      echo "<div class='col s12 product-price'>";
+      echo "Price: ₱" .$item['price'];
+      echo "</div>";
+      echo "</div>";
       // echo "</div>";
       // echo "</div>";
       if (isset($_SESSION['username']) && $_SESSION['user_level'] == '2') {
-     // echo "<div class='col s12'>";
-     echo "<input type='button' class='blue accent-1 atc modal-trigger render_modal' href='#modal1' data-index='$index' value='Edit'>"; 
-      echo "<input type='button' class='red atc modal-trigger delete_render_modal' href='#delete_modal' data-index='$index' value='delete'>";
+     echo "<input type='button' class='btn blue accent-1 btn-product modal-trigger render_modal' href='#modal1' data-index='$index' value='Edit'>"; 
       // echo "</div>";
-      echo "</div>";
-      echo "</div>";
+      echo "<input type='button' class='btn red btn-product modal-trigger delete_render_modal' href='#delete_modal' data-index='$index' value='delete'>";
+      // echo "</div>";
+      // echo "</div>";
       }elseif (isset($_SESSION['username'])) {
       echo "<form method='post' action='cart_item_endpoint.php?index=$index'>";
       echo "QTTY: <input type='number' min='o' class='qttyItem' name='item_qtty'>";
       echo "<button class='btn light-green accent-3 atc'> Add to cart </button>";
       echo "</form>";
-      echo "</div>";
-      echo "</div>";
+      // echo "</div>";
+      // echo "</div>";
+      // echo "</div>";
       }
+      echo "</div>";
+      echo "</div>";
       echo "</div>";
     };
     };
     ?>
-	<!-- Modal Structure -->
+
+  <!-- Add item Modal Structure -->
+      <div id="modal2" class="modal modal-fixed-footer">
+        <div class="modal-content">
+          <h4 class="center">Add Product</h4>
+          <div class="modal-body" id="modal-body">
+            
+          </div>
+        </div>
+      </div>
+	<!--Edit Modal Structure -->
       <div id="modal1" class="modal modal-fixed-footer">
         <div class="modal-content">
-          <h4>Modal Header</h4>
+          <h4 class="center">Edit this Product?</h4>
           <div class="modal-body" id="modal-body">
             
           </div>
