@@ -39,8 +39,10 @@
     echo "<div class='row'>";
     echo "<div class='col s12'>";
     while ($item = mysqli_fetch_assoc($results)) {
+      $owner = $item['owner_user_id'];;
       $index = $item['id'];
     if($filter == 'All' || $item['category_id'] == $filter){
+      if (!isset($_SESSION['username'])) {
       echo "<div class='col s4'>";
       echo "<div class='card'>";
       echo "<div class='card-img'>";
@@ -58,27 +60,66 @@
       echo "Price: ₱" .$item['price'];
       echo "</div>";
       echo "</div>";
-      // echo "</div>";
-      // echo "</div>";
+      echo "</div>";
+      echo "</div>";
+      echo "</div>";
+      }
+      elseif (isset($_SESSION['username']) && $_SESSION['user_level'] == '2' && $_SESSION['user_id'] == $owner) {
+      $sql = "SELECT * FROM products WHERE owner_user_id = '$owner'";
+      $results = mysqli_query($conn, $sql);
+      while ($item = mysqli_fetch_assoc($results)) {
+      echo "<div class='col s4'>";
+      echo "<div class='card'>";
+      echo "<div class='card-img'>";
+      echo "<img class='product-image' src='".$item['image']."'><br>";
+      echo "</div>";
+      echo "<div class='card-content product-content'>";
+      echo "<div class='row'>";
+      echo "<div class='col s12 product-name'>";
+      echo "<strong>". $item['name'] . "</strong>";
+      echo "</div>";
+      echo "<div class='col s12 product-description'>";
+      echo $item['description']. "<br>";
+      echo "</div>";
+      echo "<div class='col s12 product-price'>";
+      echo "Price: ₱" .$item['price'];
+      echo "</div>";
+      echo "</div>";
       if (isset($_SESSION['username']) && $_SESSION['user_level'] == '2') {
      echo "<input type='button' class='btn blue accent-1 btn-product modal-trigger render_modal' href='#modal1' data-index='$index' value='Edit'>"; 
-      // echo "</div>";
       echo "<input type='button' class='btn red btn-product modal-trigger delete_render_modal' href='#delete_modal' data-index='$index' value='delete'>";
-      // echo "</div>";
-      // echo "</div>";
-      }elseif (isset($_SESSION['username'])) {
+      echo "</div>";
+      echo "</div>";
+      echo "</div>";
+            };
+          };
+      }elseif (isset($_SESSION['username']) && $_SESSION['user_level'] == '3') {
+      echo "<div class='col s4'>";
+      echo "<div class='card'>";
+      echo "<div class='card-img'>";
+      echo "<img class='product-image' src='".$item['image']."'><br>";
+      echo "</div>";
+      echo "<div class='card-content product-content'>";
+      echo "<div class='row'>";
+      echo "<div class='col s12 product-name'>";
+      echo "<strong>". $item['name'] . "</strong>";
+      echo "</div>";
+      echo "<div class='col s12 product-description'>";
+      echo $item['description']. "<br>";
+      echo "</div>";
+      echo "<div class='col s12 product-price'>";
+      echo "Price: ₱" .$item['price'];
+      echo "</div>";
+      echo "</div>";
       echo "<form method='post' action='cart_item_endpoint.php?index=$index'>";
-      echo "QTTY: <input type='number' min='o' class='qttyItem' name='item_qtty'>";
+      echo "QTTY: <input class='quantity' type='number' min='o' class='qttyItem' name='item_qtty'>";
       echo "<button class='btn light-green accent-3 atc'> Add to cart </button>";
       echo "</form>";
-      // echo "</div>";
-      // echo "</div>";
-      // echo "</div>";
-      }
       echo "</div>";
       echo "</div>";
       echo "</div>";
-    };
+      };
+      };
     };
     ?>
 

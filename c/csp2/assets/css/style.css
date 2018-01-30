@@ -107,3 +107,7 @@ li.logout-user {
 	margin-top: 10px;
 	width: 140px;
 }
+input[type=number].quantity{
+	height: 1em;
+	width: 62%;
+}

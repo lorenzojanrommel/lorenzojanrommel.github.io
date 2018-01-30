@@ -13,3 +13,5 @@
   	<script type="text/javascript" src="assets/js/customjs.js"></script>
 	<!-- import font awesome -->
   	<script src="https://use.fontawesome.com/f9c4685502.js"></script>
+  	<!-- material design icons -->
+  	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />

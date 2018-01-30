@@ -7,6 +7,8 @@ $quant = $_POST['quant'];
 
 $_SESSION['cart'][$index] = $quant;
 
+
+
 header('location: cart_item.php')
 
 ?>
