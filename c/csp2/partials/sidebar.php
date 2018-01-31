@@ -32,7 +32,9 @@
 	  <input type="submit" name='login' class="btn waves-effect blue accent-4" value='Login'>
   	</div>
 	</form>
-<?php }else{ ?>
+<?php }elseif (isset($_POST['proceed'])) {
+  echo "</div>";
+}else{ ?>
   <form action="authenticate.php" method="POST">
         <div class="input-field col s12">
           <input id="text" name="username" type="text" class="validate">

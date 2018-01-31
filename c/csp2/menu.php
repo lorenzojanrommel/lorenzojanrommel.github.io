@@ -5,8 +5,9 @@
 	function display_content(){
  	$filter = isset($_GET['category']) ? $_GET['category'] : 'All';
     require 'connectdb.php'; //
-    if(isset($_SESSION['user_level']) && $_SESSION['user_level']==2){
-    echo "<button class='btn modal-trigger' id='add_item'  href='#modal2'>Add Item</button>";
+    if(isset($_SESSION['user_level']) && $_SESSION['user_level']==2 && $_SESSION['user_status'] == 1){
+    // echo "<button class='btn modal-trigger' id='add_item'  href='#modal2'>Add Item</button>";
+      echo "<a class='btn-floating btn-large waves-effect waves-light green accent-4 modal-trigger add_item' href='#modal2' id='add_item'><i class='material-icons'>add</i></a>";
 		};
 		?>
 	<h4 class="">Category:</h4>

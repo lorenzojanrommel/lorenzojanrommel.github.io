@@ -16,7 +16,7 @@ session_start();
 	$quantity;
 
 		
-
+	// echo count($_SESSION['cart']);
 	// print_r($_SESSION['cart']);
 	header('location: menu.php')
      // require "partials/head.php"

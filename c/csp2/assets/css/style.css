@@ -111,3 +111,19 @@ input[type=number].quantity{
 	height: 1em;
 	width: 62%;
 }
+.row .col.s12 > .icon {
+	width: 40px;
+	height: 40px;
+}
+.invoice{
+	margin-top: 0;
+}
+.invoice-title{
+	display: inline-block;
+}
+td.total {
+	border-top: 1px solid #000;
+}
+input[type=text].underline:not(.browser-default){
+	border-bottom: 1px solid rgba(0, 0, 0, 0);
+}

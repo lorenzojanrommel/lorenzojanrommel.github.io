@@ -32,6 +32,11 @@ $username = isset($_SESSION['username']) ? //if
          <?php
           if(isset($_SESSION['username']) && $_SESSION['user_status'] == 1){
              echo '<li><a href="#" class="dropdown-button" data-activates="logout_dropdown"><i class="fa fa-user-o" aria-hidden="true"></i> '. $_SESSION['fname']. ' <i class="fa fa-sort-desc" aria-hidden="true"></i></a></li>';
+             if (!isset($_SESSION['cart'])) {
+             echo "<li><a href='cart_item.php'><i class='fa fa-shopping-cart' aria-hidden='true'></i></a></li>";
+             }else{
+             echo "<li><a href='cart_item.php'><i class='fa fa-shopping-cart' aria-hidden='true'></i><span class='badge white'>".count($_SESSION['cart']) ."</span></a></li>";
+             }
           }else {
             echo "<li><a class='modal-trigger render_modal' href='#login'>Log in</a></li>";
           }
@@ -55,7 +60,7 @@ $username = isset($_SESSION['username']) ? //if
         <li><a href="menu.php">Products</a></li>
         <li><a href="contact.php">Contact</a></li>
         <?php 
-          if(isset($_SESSION['username']) && $_SESSION['user_status'] == 1){
+          if(isset($_SESSION['username']) && $_SESSION['user_status'] == 1){  
             echo "<li><a href='logout.php'>Log Out</a></li>";
           }else {
             echo "<li><a class='modal-trigger render_modal' href='#login'>Log in</a></li>";

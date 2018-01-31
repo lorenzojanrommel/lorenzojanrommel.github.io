@@ -21,7 +21,8 @@ if (is_numeric($price) && is_numeric($item)) {
 	$mes = "<small>  Your Item Quantity is 0 </small>"; 
 }
 $total += $subtotal;
-echo "<div class='col s4'>";
+echo "<form method='post' action='quantity_change.php?index=$index'>";
+echo "<div class='col s6'>";
 echo "<div class='card'>";
 echo "<div class='card-img'>";
 echo "<form method='post' action='quantity_change.php?index=$index'>";
@@ -31,12 +32,12 @@ echo "<div class='card-content'>";
 echo "<h5 style='color:#ab47bc;'>" .$name. "</h5><br>";
 echo $description. "<br>";
 echo "<span style='color:#0d47a1;'> Price: </span> ₱" .$price;
-echo "<br> Quantity: <input type='number' id='quant' name='quant' min='1' value='$item'>";
+echo "<br> Quantity: <input type='number' name='quant' min='1' value='$item'>";
 echo "<br> Total price: ". $subtotal;
 if ($item == 0) {
 	echo "<div class='req'> $mes </div>";
 }
-echo "<input type='submit' id='item_qtty' class='btn' value='Change Quantity'>";
+echo "<input type='submit' class='btn' name='change_quantity' value='Change Quantity'>";
 echo "<a href='delete_cart_item.php?index=$index'class='modal-close'><input type='button' class='btn red' value='Remove From Cart'></a>";
 echo "</form>";
 echo "</div>";
@@ -47,6 +48,8 @@ if (isset($total) && $total != 0) {
 echo "<div class='clearfix center'>";
 echo "<br>";
 echo "<h4> Total:" .$total. "</h4>";
+echo "<a href='menu.php'><input type='button' class='btn green' value='Continue Shopping'></a>";
+echo "<a href='cart_proceed.php'><input type='button' class='btn blue' value='Proceed to Checkout'></a>";
 echo "</div>";
 }elseif(!isset($item)){
 	echo "<small class='req'> Your cart is empty </small>";	
