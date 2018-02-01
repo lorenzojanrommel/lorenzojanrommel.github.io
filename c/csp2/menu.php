@@ -1,16 +1,16 @@
 <?php 
-	function display_title(){
-		echo "Menu || Bacabac Farmers Producer Cooperative";
-	}
-	function display_content(){
- 	$filter = isset($_GET['category']) ? $_GET['category'] : 'All';
+  function display_title(){
+    echo "Menu || Bacabac Farmers Producer Cooperative";
+  }
+  function display_content(){
+  $filter = isset($_GET['category']) ? $_GET['category'] : 'All';
     require 'connectdb.php'; //
     if(isset($_SESSION['user_level']) && $_SESSION['user_level']==2 && $_SESSION['user_status'] == 1){
     // echo "<button class='btn modal-trigger' id='add_item'  href='#modal2'>Add Item</button>";
       echo "<a class='btn-floating btn-large waves-effect waves-light green accent-4 modal-trigger add_item' href='#modal2' id='add_item'><i class='material-icons'>add</i></a>";
-		};
-		?>
-	<h4 class="">Category:</h4>
+    };
+    ?>
+  <h4 class="">Category:</h4>
     <div class="input-field col s12">
     <form>
     <select name="category">
@@ -20,7 +20,7 @@
       $sql = "SELECT * FROM categories";
       $results = mysqli_query($conn, $sql);
       while ($row = mysqli_fetch_assoc($results)) {
-       	$id = $row['id'];
+        $id = $row['id'];
         $category = $row['name'];
 
       echo $filter == $id ? "<option selected value='$id'>$category</option>" : "<option value='$id'> $category </option>" ;
@@ -133,11 +133,11 @@
           </div>
         </div>
       </div>
-	<!--Edit Modal Structure -->
+  <!--Edit Modal Structure -->
       <div id="modal1" class="modal modal-fixed-footer">
         <div class="modal-content">
           <h4 class="center">Edit this Product?</h4>
-          <div class="modal-body" id="modal-body">
+          <div class="modal-body" id="edit-body">
             
           </div>
         </div>
@@ -159,11 +159,11 @@
     echo "</div>";
 
 };
-	require "template.php";
+  require "template.php";
 ?>
 
 <script type="text/javascript">
-	//add item
+  //add item
     $("#add_item").click(function(){
     $.ajax({
       method: 'post',
@@ -183,11 +183,12 @@
           method : 'post',
           url: 'render_modal_body_endpoint.php',
           data: {
-            edit :true,
+            update :true,
             index : index
           },
           success: function(data){
-            $('#modal-body').html(data);
+            // alert(data);
+            $('#edit-body').html(data);
           }
         });
       });

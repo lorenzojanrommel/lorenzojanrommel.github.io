@@ -21,8 +21,7 @@ $username = isset($_SESSION['username']) ? //if
           }else {
             echo "<li><a class='modal-trigger render_modal' href='#login'>Log in</a></li>";
           }
-        }elseif (isset($_SESSION['username']) && ($_SESSION['user_level'] == 2 
-          || $_SESSION['user_level'] == 3) 
+        }elseif (isset($_SESSION['username']) &&  $_SESSION['user_level'] == 3
           && $_SESSION['user_status'] == 1) {
          ?>
         <li><a href="home.php">Home</a></li>
@@ -48,7 +47,7 @@ $username = isset($_SESSION['username']) ? //if
         <li><a href="about.php">About</a></li>
          <?php
           if(isset($_SESSION['username']) && $_SESSION['user_status'] == 1){
-            echo '<li><a href="logout.php">Log Out</a></li>';
+             echo '<li><a href="#" class="dropdown-button" data-activates="logout_dropdown"><i class="fa fa-user-o" aria-hidden="true"></i> '. $_SESSION['fname']. ' <i class="fa fa-sort-desc" aria-hidden="true"></i></a></li>';
           }else {
             echo "<li><a class='modal-trigger render_modal' href='#login'>Log in</a></li>";
           }
@@ -75,6 +74,7 @@ $username = isset($_SESSION['username']) ? //if
   <ul id='logout_dropdown' class='dropdown-content'>
     <li class="red darken-4 logout-user" selected disabled><?php echo'<i class="fa fa-user-o" aria-hidden="true"></i> '. $_SESSION['fname']; ?></li>
     <li class="divider"></li>
+    <li><a href="view_profile.php">Your Profile</a></li>
     <li><a href="logout.php">Logout</a></li>
   </ul>
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 31, 2018 at 09:19 AM
+-- Generation Time: Jan 29, 2018 at 09:31 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.1.2
 
@@ -49,16 +49,9 @@ CREATE TABLE `orders` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `total_price` int(11) NOT NULL,
-  `id_status` int(11) NOT NULL,
-  `orderdate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
-
---
--- Dumping data for table `orders`
---
-
-INSERT INTO `orders` (`id`, `user_id`, `total_price`, `id_status`, `orderdate`) VALUES
-(1, 2, 5450, 1, '2018-01-31 16:18:10');
+  `orderdate` datetime NOT NULL,
+  `id_status` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -71,16 +64,7 @@ CREATE TABLE `order_details` (
   `product_id` int(11) NOT NULL,
   `quantity` varchar(255) NOT NULL,
   `order_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
-
---
--- Dumping data for table `order_details`
---
-
-INSERT INTO `order_details` (`id`, `product_id`, `quantity`, `order_id`) VALUES
-(1, 3, '1', 1),
-(2, 2, '2', 1),
-(3, 1, '3', 1);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -104,9 +88,7 @@ CREATE TABLE `products` (
 
 INSERT INTO `products` (`id`, `name`, `description`, `image`, `price`, `category_id`, `owner_user_id`) VALUES
 (1, 'Dekalb - 9132', ' Dekalb', 'assets/img/dekalb-9132.jpg', '2000', 1, 3),
-(2, 'Dekalb 6919', ' Dekalb 6919', 'assets/img/dekalb6919.jpg', '1500', 1, 3),
-(3, 'Apple', 'Apple ', 'assets/img/apple.png', '150', 1, 9),
-(4, 'Banana', 'banana ', 'assets/img/banana.png', '150', 1, 10);
+(2, 'Dekalb 6919', ' Dekalb 6919', 'assets/img/dekalb6919.jpg', '2000', 1, 3);
 
 -- --------------------------------------------------------
 
@@ -257,17 +239,17 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `order_details`
 --
 ALTER TABLE `order_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `users`
 --

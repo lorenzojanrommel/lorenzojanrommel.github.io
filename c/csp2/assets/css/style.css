@@ -63,6 +63,7 @@ li.logout-user {
 }
 .update {
 	width: 70%;
+	padding-bottom: 20px;
 }
 .user-details{
 	padding: 10px;
@@ -126,4 +127,24 @@ td.total {
 }
 input[type=text].underline:not(.browser-default){
 	border-bottom: 1px solid rgba(0, 0, 0, 0);
+}
+
+/*
+ *Your profile
+ *
+ */
+
+.profile-container{
+	/*border: 1px solid #000;*/
+}
+/*.user-email {
+	background-color: red;
+}*/
+.profile-divider {
+	/*background-color: green;*/
+	height: 30px;
+	/*width: 30px;*/
+}
+.order-details-container {
+	/*border: 1px solid #000;*/
 }

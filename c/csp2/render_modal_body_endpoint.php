@@ -31,38 +31,26 @@
         echo "</form>";
         echo "</div>";
         echo "</div>";
-    }
-
-
-    if (isset($_POST['edit'])) {
-	$index = $_POST['index'];
+    };
+    if(isset($_POST['update'])) {
+    $index = $_POST['index'];
+    // echo $_POST['update'];
     $sql = "SELECT * FROM products WHERE id = '$index'";
     $results =  mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($results);
     extract($row);
-
-    // echo "<div class='col s3'>";
-    // echo "</div>";
-    // echo "<div class='col s6'>";
     echo "<form method='post' action='edit.php?index=$index'>"; //to save changes
-    // echo "<div class='card'>";
-    // echo "<div class='card-img'>";
     echo "<img class='product-image' src='".$image."'><br>";
-    // echo "</div>";
     echo "<div class='card-content'>";
     echo "Name: <input type='text' name='name' value='$name'><br>";
     echo "Description: <textarea name='description'> $description</textarea> <br>";
     echo "Price: <input type='number' name='price' min='0' value='$price'><br>";
     echo "<input type='submit' id='save' class='btn atc l' value='Save'>";
-    echo "<a href='#!' class='modal-close'><input type='button' class='btn red atc' value='Cancel'></a>" ;
-    // echo "</div>";
-    // echo "</div>";
+    echo "<a href='#!' class='modal-close'><input type='button' class='btn red atc' value='Cancel'></a>";
     echo "</form>";
-    // echo "</div>";
     echo "</div>";
-    }
+    };
 ?>
-
 <script type="text/javascript">
     $(document).ready(function() {
     $('select').material_select();

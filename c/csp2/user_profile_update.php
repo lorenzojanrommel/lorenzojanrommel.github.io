@@ -1,12 +1,13 @@
 <?php
 	$id = $_POST['id'];
+    // echo $_POST['id'];
     require 'connectdb.php';
     $sql = "SELECT * FROM users WHERE id = $id";
     $results = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($results);
     extract($row);
     echo "<div class='col s12'>";
-    echo "<form method='post' action='users_edit.php?id=$id'>"; //to save changes
+    echo "<form method='post' action='edit_profile.php?id=$id'>"; //to save changes
     $address = ucwords($address);
     $first_name= ucwords($first_name);
     $last_name = ucwords($last_name);
@@ -57,8 +58,7 @@
     echo "</div>";
     echo "<div class='col s10'>";
     echo "<input type='text' name='address' value='$address' required>";
-    echo "</div>";
-    echo "<div class='col s2'>";
+    echo "<div class='col s2 clearfix'>";
     echo "<strong> Status </strong>";
     echo "</div>";
     echo "<div class='col s4'>
@@ -73,29 +73,11 @@
     echo "
     </select>
     </div>";
-    echo "<div class='col s2'>";
-    echo "<strong> Level </strong>";
-    echo "</div>";
-    echo "<div class='col s4'>
-    <select name='level' required>";
-    if (isset($user_level) && $user_level == 1) {
-     echo "<option value='1' selected>Admin</option>
-      <option value='2'>Seller</option>
-      <option value='3'>Customer</option>";
-    }elseif($user_level == 2) {
-     echo "<option value='2' selected>Seller</option>
-      <option value='1'>Admin</option>
-      <option value='3'>Customer</option>";
-    }elseif($user_level == 3) {
-     echo "<option value='3' selected>Customer</option>
-      <option value='1'>Admin</option>
-      <option value='2'>Seller</option>";
-    }
-    echo "
-    </select>
-    </div>";
+    echo "<div class='col s12 clearfix'>";
     echo "<input type='submit' class='btn red del-btn' value='Save Update'></a>" ;
     echo "<a href='#!' class='modal-close'><input type='button' class='btn blue del-btn' value='Cancel'></a>" ;
+    echo "</div>";
+    echo "</div>";
     // echo "</div>";
     // echo "</div>";
     echo "</form>";
