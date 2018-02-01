@@ -72,14 +72,13 @@
 					// }
 						$sql1 = "SELECT * FROM products JOIN order_details ON 
 							(products.id = order_details.product_id) JOIN orders ON
-							(order_details.order_id = orders.id) JOIN users ON (orders.user_id = users.id) 
-							WHERE order_id = '$id'";
+							(order_details.order_id = orders.id) WHERE order_id = '$id'";
 						$resultss = mysqli_query($conn, $sql1);
 						$row2 = mysqli_fetch_assoc($resultss); 
 						extract($row2);
 						$total = 0;
-						$subtotal = $price * $quantity;
-						$total += $subtotal;
+						// $total += $subtotal;
+						// $subtotal = $price * $quantity;
 						?>
 						<table>
 							<thead>
@@ -95,11 +94,24 @@
 							</thead>
 							<tbody>
 								<tr>
+									<?php 
+						$sql2 = "SELECT * FROM products JOIN order_details ON 
+									(products.id = order_details.product_id) JOIN orders ON
+									(order_details.order_id = orders.id) WHERE order_id = '$id'";
+						$result3 = mysqli_query($conn, $sql2);
+						while($row3 = mysqli_fetch_assoc($result3)){
+									extract($row3);
+									// $total = 0;
+									$subtotal = $price * $quantity;
+									$total += $subtotal;
+									 ?>
 									<td><?php echo $name; ?></td>
 									<td><?php echo $quantity; ?></td>
 									<td><?php echo $price; ?></td>
 									<td><?php echo $subtotal; ?></td>
 								</tr>
+								<?php };
+								 ?>
 								<tr>
 									<td></td>
 									<td></td>

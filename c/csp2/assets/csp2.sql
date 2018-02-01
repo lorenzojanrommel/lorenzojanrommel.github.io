@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 29, 2018 at 09:31 AM
+-- Generation Time: Feb 01, 2018 at 09:58 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.1.2
 
@@ -49,9 +49,19 @@ CREATE TABLE `orders` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `total_price` int(11) NOT NULL,
-  `orderdate` datetime NOT NULL,
-  `id_status` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `id_status` int(11) NOT NULL,
+  `orderdate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`id`, `user_id`, `total_price`, `id_status`, `orderdate`) VALUES
+(1, 2, 2000, 1, '2018-02-01 09:21:48'),
+(2, 2, 2000, 1, '2018-02-01 13:34:31'),
+(3, 2, 450, 1, '2018-02-01 13:50:11'),
+(4, 2, 4000, 1, '2018-02-01 14:01:15');
 
 -- --------------------------------------------------------
 
@@ -64,7 +74,18 @@ CREATE TABLE `order_details` (
   `product_id` int(11) NOT NULL,
   `quantity` varchar(255) NOT NULL,
   `order_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+
+--
+-- Dumping data for table `order_details`
+--
+
+INSERT INTO `order_details` (`id`, `product_id`, `quantity`, `order_id`) VALUES
+(1, 3, '1', 1),
+(2, 1, '1', 2),
+(3, 2, '3', 3),
+(4, 2, '1', 4),
+(5, 3, '1', 4);
 
 -- --------------------------------------------------------
 
@@ -88,7 +109,9 @@ CREATE TABLE `products` (
 
 INSERT INTO `products` (`id`, `name`, `description`, `image`, `price`, `category_id`, `owner_user_id`) VALUES
 (1, 'Dekalb - 9132', ' Dekalb', 'assets/img/dekalb-9132.jpg', '2000', 1, 3),
-(2, 'Dekalb 6919', ' Dekalb 6919', 'assets/img/dekalb6919.jpg', '2000', 1, 3);
+(2, 'Dekalb 6919', ' Dekalb 6919', 'assets/img/dekalb6919.jpg', '1500', 1, 3),
+(3, 'Apple', 'Apple ', 'assets/img/apple.png', '150', 1, 9),
+(4, 'Banana', 'banana ', 'assets/img/banana.png', '150', 1, 10);
 
 -- --------------------------------------------------------
 
@@ -118,11 +141,11 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `mobile_number`, `birthdate`, `gender`, `address`, `username`, `password`, `user_level`, `user_status`, `reg_date`) VALUES
 (1, 'Jan Rommel', 'Lorenzo', 'lorenzojanrommel@gmail.com', '09122235050', '1997-01-24', 'm', 'camiling, tarlac', 'admin', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 1, 1, '2018-01-25 09:11:37'),
-(2, 'JR', 'Lorenzon', 'misterfewwords@gmail.com', '0912223213213', '1993-12-05', 'm', 'qweweqwewqeqwewqeq', 'customer', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 3, 1, '2018-01-25 11:33:20'),
-(3, 'JR Seller', 'Seller', 'jrseller@gmail.com', '09123331345', '2018-01-02', 'm', 'jr address', 'seller', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 2, 1, '2018-01-25 12:59:03'),
+(2, 'JR', 'Lorenzo', 'misterfewwords@gmail.com', '0912223213213', '1993-12-05', 'm', 'Jrlorenzo_address', 'customer', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 3, 1, '2018-02-01 08:03:32'),
+(3, 'JR Sellerrr', 'Seller', 'jrseller@gmail.com', '09123331345', '2018-01-02', 'm', 'Jr Address', 'seller', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 2, 1, '2018-02-01 04:48:45'),
 (4, 'Fiery', 'Queen', 'linaqueen@gmail.com', '09123456781', '2018-01-02', 'f', 'Lina_address', 'lina', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 2, 1, '2018-01-29 05:17:52'),
 (6, 'Maiden', 'Slark', 'maidenslark@gmail.com', '0912345668', '25 January, 2018', 'f', 'maidenslarkaddress', 'maidenslark', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 2, 1, '2018-01-25 15:49:50'),
-(7, 'Akasha', 'Pain', 'akashapain@gmail.com', '012321312321', '26 January, 2018', 'f', 'akashapainaddress', 'akasha', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 2, 1, '2018-01-25 16:05:48'),
+(7, 'Akashaaaaa', 'Pain', 'akashapain@gmail.com', '012321312321', '26 January, 2018', 'f', 'Akashapainaddress', 'akasha', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 2, 1, '2018-02-01 04:39:44'),
 (8, 'Monet', 'Monet', 'monetmonet@gmaill.com', '0912321321234', '26 January, 2018', 'm', 'monetadress', 'monet', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 3, 1, '2018-01-25 16:12:53'),
 (9, 'Fy', 'Fy', 'fy@gmail.com', '0912321321', '26 January, 2018', 'm', 'Fyadress', 'fy', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 2, 1, '2018-01-29 08:10:13'),
 (10, 'mister', 'few', 'misterfew@gmail.com', '091521155474', '28 January, 2018', 'm', 'misterfewaddress', 'misterfew', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 2, 1, '2018-01-27 16:46:35'),
@@ -239,17 +262,17 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `order_details`
 --
 ALTER TABLE `order_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `users`
 --
