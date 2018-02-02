@@ -1,10 +1,10 @@
-<?php
-  function display_title(){
-    echo "Contact Page";
-}
+<?php 
+	function display_title(){
+		echo "Contact || Bacabac Farmers Producer Cooperative";
+	}
+	function display_content(){
+		echo "<h3> Contact</h3>";
+	}
 
-  function display_content(){
-    echo "Contact";
-}
-  require "template.php"
+	require 'template.php';
 ?>

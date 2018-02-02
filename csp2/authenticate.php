@@ -1,35 +1,36 @@
 <?php
 session_start();
-
-// $string = file_get_contents("assets/json/users.json");
-// $users = json_decode($string, true);
-// print_r($users);
-// exit();
-	require 'connectiondb.php';
+require 'connectdb.php';
 if (isset($_POST['login'])) {
-
-	$username = $_POST['username'];
+	$username = htmlspecialchars($_POST['username']);
 	$password = sha1($_POST['password']);
-
-
 	$sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
-
 	$results = mysqli_query($conn, $sql);
-
-	// print_r($results);
 	if (mysqli_num_rows($results)>0) {
 		$row = mysqli_fetch_assoc($results);
 		$_SESSION['username'] = $username;
-		$_SESSION['role'] = $row['role'];
+		$_SESSION['user_id'] = $row['id'];
+		$_SESSION['user_level'] = $row['user_level'];
+		$_SESSION['user_status'] = $row['user_status'];
+		$_SESSION['fname'] = $row['first_name'];
+		$_SESSION['lname'] = $row['last_name'];
+		$_SESSION['address'] = $row['address'];
+		$_SESSION['mobile'] = $row['mobile_number'];
+		if (isset($_SESSION['user_level']) && $_SESSION['user_level'] == 1 && $_SESSION['user_status'] == 1) {
+		header('location: dashboard.php');
+		}elseif(($_SESSION['user_level'] == 2 || $_SESSION['user_level'] == 3) && $_SESSION['user_status'] == 1){
 		header('location: home.php');
+		}elseif ($_SESSION['user_status'] == 2) {
+		// header('location: logout.php');
+		header('location: home.php');
+		}
 	}else {
-		echo "Failed to login. Incorrect login Credentials <br>";
-		echo "please login again <a href='login.php'> Here </a>";
+		
+		header('location: home.php');
 	}
 }
-
 if (isset($_POST['register'])) {
-	$username = $_POST['username'];
+	$username = htmlspecialchars($_POST['username']);
 	$sql = "SELECT * FROM users WHERE username = '$username'";
 	$results = mysqli_query($conn, $sql);
 	if (mysqli_num_rows($results)>0) {
@@ -38,11 +39,12 @@ if (isset($_POST['register'])) {
 		echo "valid";
 	}
 }
-// if(isset($users[$username]) && $users[$username] == $password) {
-// 	$_SESSION['username'] = $username;
-// 	header('location: home.php');
-// }else {
-// 	echo "Failed to login. Incorrect login Credentials <br>";
-// 	echo "please login again <a href='login.php'> Here </a>";
-// }
 ?>
+
+
+<script type="text/javascript">
+	$(document).ready(function(){
+    $('.tooltipped').tooltip({delay: 50});
+  })
+</script>
+		 	<!-- alert('Your Account Has Been Deactivate. Contact us for more info'); -->

@@ -1,28 +1,27 @@
 <?php
 session_start();
-	require 'connectiondb.php';
-
-	$username = $_POST['username'];
+	require 'connectdb.php';
+	
+	$fname = htmlspecialchars($_POST['fname']);
+	$lname = htmlspecialchars($_POST['lname']);
+	$email = htmlspecialchars($_POST['email']);
+	$mobile = htmlspecialchars($_POST['mobile']);
+	$birthdate = htmlspecialchars($_POST['birthdate']);
+	$gender = htmlspecialchars($_POST['gender']);
+	$address = htmlspecialchars($_POST['address']);
+	$username = htmlspecialchars($_POST['username']);
 	$password = sha1($_POST['pass']);
-
+	$user_level = htmlspecialchars($_POST['user_level']);
 	// echo $password;
-	$sql = "INSERT INTO users (username, password,role) VALUES ('$username', '$password', 'regular')";
-
+	$sql = "INSERT INTO users (first_name, last_name, email, mobile_number, birthdate, gender, address, username, password, user_level, user_status) VALUES ('$fname', '$lname', '$email', '$mobile','$birthdate','$gender', '$address','$username', '$password', '$user_level', '1')";
 	mysqli_query($conn, $sql) or die (mysqli_error($conn));
-
+	$sql = "SELECT * FROM users WHERE username = '$username'";
+	$results = mysqli_query($conn, $sql);
+	$row = mysqli_fetch_assoc($results);
 	$_SESSION['username'] = $username;
-	$_SESSION['role'] = 'regular';
+	$_SESSION['fname'] = $fname;
+	$_SESSION['user_level'] = $user_level;
+	$_SESSION['user_status'] = $row['user_status'];
 	header('location: home.php');
-
-// $string = file_get_contents("assets/json/users.json");
-// $users = json_decode($string, true);
-// echo "original users array:";
-// print_r($users);
-// $users[$username] = $password;
-// echo "<br> new users array:";
-// print_r($users);
-
-// $file = fopen("assets/json/users.json", "w"); //open json file
-// fwrite($file, json_encode($users, JSON_PRETTY_PRINT));//rewrite the json file
-// fclose($file); //close the json file
+	
 ?>

@@ -1,3 +1,3 @@
-<footer class="purple lighten-4">
+<footer class="red darken-4">
 	<p>All Rights Reserved.</p>
 </footer>
