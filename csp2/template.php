@@ -22,10 +22,10 @@
 	<?php
 }else {
 	?>
-	<div class="col s9">
+	<div class="col s12 m9 l9">
 		<?php display_content() ?>
 	</div>
-	<div class="col s3">
+	<div class="col s12 m3 l3">
 	<?php require "partials/sidebar.php"; ?>
 	</div>
 	</div>

@@ -20,8 +20,7 @@
       <div class="disabled-message ">
       <p class="disable-message center">Account has been disabled</p>
       </div>
-        <div class="input-field col s12">
-          <input id="text" name="username" type="text" class="validate">
+        <input id="text" name="username" type="text" class="validate">
           <label for="username">Username</label>
         </div>
         <div class="input-field col s12">

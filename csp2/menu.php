@@ -44,7 +44,7 @@
       $index = $item['id'];
     if($filter == 'All' || $item['category_id'] == $filter){
       if (!isset($_SESSION['username'])) {
-      echo "<div class='col s4'>";
+      echo "<div class='col s12 m5 l4'>";
       echo "<div class='card'>";
       echo "<div class='card-img'>";
       echo "<img class='product-image' src='".$item['image']."'><br>";
@@ -60,6 +60,14 @@
       echo "<div class='col s12 product-price'>";
       echo "Price: ₱" .$item['price'];
       echo "</div>";
+      $sql1 = "SELECT * FROM users WHERE id = $owner";
+      $results1 = mysqli_query($conn, $sql1);
+      while ($row1 = mysqli_fetch_assoc($results1)) {
+        extract($row1);
+      echo "<div class='col s12 product-seller'>";
+      echo "<strong> Seller: </strong> " . $first_name;
+      echo "</div>";
+      }
       echo "</div>";
       echo "</div>";
       echo "</div>";
@@ -69,7 +77,7 @@
       $sql = "SELECT * FROM products WHERE owner_user_id = '$owner'";
       $results = mysqli_query($conn, $sql);
       while ($item = mysqli_fetch_assoc($results)) {
-      echo "<div class='col s4'>";
+      echo "<div class='col s12 m5 l4'>";
       echo "<div class='card'>";
       echo "<div class='card-img'>";
       echo "<img class='product-image' src='".$item['image']."'><br>";
@@ -95,7 +103,7 @@
             };
           };
       }elseif (isset($_SESSION['username']) && $_SESSION['user_level'] == '3') {
-      echo "<div class='col s4'>";
+      echo "<div class='col s12 m5 l4'>";
       echo "<div class='card'>";
       echo "<div class='card-img'>";
       echo "<img class='product-image' src='".$item['image']."'><br>";
@@ -111,6 +119,14 @@
       echo "<div class='col s12 product-price'>";
       echo "Price: ₱" .$item['price'];
       echo "</div>";
+      $sql1 = "SELECT * FROM users WHERE id = $owner";
+      $results1 = mysqli_query($conn, $sql1);
+      while ($row1 = mysqli_fetch_assoc($results1)) {
+        extract($row1);
+      echo "<div class='col s12 product-seller'>";
+      echo "<strong> Seller: </strong> " . $first_name;
+      echo "</div>";
+      }
       echo "</div>";
       echo "<form method='post' action='cart_item_endpoint.php?index=$index'>";
       echo "QTTY: <input class='quantity' type='number' min='o' class='qttyItem' name='item_qtty'>";

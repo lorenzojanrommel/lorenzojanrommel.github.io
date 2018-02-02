@@ -55,15 +55,41 @@ $username = isset($_SESSION['username']) ? //if
         ?>
       </ul>
       <ul class="side-nav" id="sidenav">
-        <li><a href="home.php">Home</a></li>
-        <li><a href="menu.php">Products</a></li>
-        <li><a href="contact.php">Contact</a></li>
+       <?php if (isset($_SESSION['username']) && $_SESSION['user_level'] == 1 && $_SESSION['user_status'] == 1) {
+        ?>
+        <li><a href="dashboard.php">Dashboard</a></li>
+        <li><a href="user_list.php">Users List</a></li>
+        <li><a href="register_admin.php">Add Admin</a></li>
         <?php 
           if(isset($_SESSION['username']) && $_SESSION['user_status'] == 1){  
             echo "<li><a href='logout.php'>Log Out</a></li>";
           }else {
             echo "<li><a class='modal-trigger render_modal' href='#login'>Log in</a></li>";
           }
+        }elseif(isset($_SESSION['username']) &&  ($_SESSION['user_level'] == 2
+          || $_SESSION['user_level'] == 3) && $_SESSION['user_status'] == 1){
+            ?>
+        <li><a href="home.php">Home</a></li>
+        <li><a href="menu.php">Products</a></li>
+        <li><a href="contact.php">Contact</a></li>
+            <?php
+          if(isset($_SESSION['username']) && $_SESSION['user_status'] == 1){  
+            echo "<li><a href='logout.php'>Log Out</a></li>";
+          }else {
+            echo "<li><a class='modal-trigger render_modal' href='#login'>Log in</a></li>";
+          }
+        }else{
+          ?>
+        <li><a href="home.php">Home</a></li>
+        <li><a href="menu.php">Products</a></li>
+        <li><a href="contact.php">Contact</a></li>
+          <?php
+          if(isset($_SESSION['username']) && $_SESSION['user_status'] == 1){
+             echo '<li><a href="#" class="dropdown-button" data-activates="logout_dropdown"><i class="fa fa-user-o" aria-hidden="true"></i> '. $_SESSION['fname']. ' <i class="fa fa-sort-desc" aria-hidden="true"></i></a></li>';
+          }else {
+            echo "<li><a class='modal-trigger render_modal' href='#login'>Log in</a></li>";
+          }
+        }
         ?>
       </ul>
 
@@ -111,5 +137,12 @@ $username = isset($_SESSION['username']) ? //if
     </div>
   </div>
 <script type="text/javascript" src="assets/js/customjs.js"></script>
+<script type="text/javascript">
+    // Nav Bar Dropdown
+  $( document ).ready(function(){
+  $(".button-collapse").sideNav();
+
+  });
+</script>
 
           
