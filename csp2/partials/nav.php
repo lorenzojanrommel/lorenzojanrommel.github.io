@@ -8,7 +8,26 @@ $username = isset($_SESSION['username']) ? //if
     <div class="nav-wrapper red darken-4">
       <div class="container">
       <a href="index.php" class="brand-logo">BFPC</a>
-      <a href="#" data-activates="sidenav" class="button-collapse"><i class="fa fa-bars" aria-hidden="true"></i></a>
+        <a href="#" data-activates="sidenav" class="button-collapse"><i class="fa fa-bars" aria-hidden="true"></i></a>
+      <?php if (isset($_SESSION['username']) && $_SESSION['user_level'] == 3) {
+        ?>
+      <ul class="right show-on-med-and-down">
+            <?php if (!isset($_SESSION['cart'])) {
+             echo "<li><a href='cart_item.php'><i class='fa fa-shopping-cart' aria-hidden='true'></i></a></li>";
+             }else{
+             echo "<li><a href='cart_item.php'><i class='fa fa-shopping-cart' aria-hidden='true'></i><span class='badge'>".count($_SESSION['cart']) ."</span></a></li>";
+             }
+      }else{
+        ?>
+        <ul class="right show-on-med-and-down">
+        <?php
+        if (isset($_SESSION['username']) && $_SESSION['user_level'] == 2) {
+        echo "<li><a href='view_profile.php'><i class='fa fa-user-o' aria-hidden='true'></i></a></li>";
+        }else{
+          echo "";
+        }
+      } ?>
+      </ul>
       <ul class="right hide-on-med-and-down">
       <?php if (isset($_SESSION['username']) && $_SESSION['user_level'] == 1 && $_SESSION['user_status'] == 1) {
       ?>

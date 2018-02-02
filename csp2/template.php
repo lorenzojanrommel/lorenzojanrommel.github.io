@@ -25,7 +25,7 @@
 	<div class="col s12 m9 l9">
 		<?php display_content() ?>
 	</div>
-	<div class="col s12 m3 l3">
+	<div class="col s12 m3 l3 hide-on-med-and-down">
 	<?php require "partials/sidebar.php"; ?>
 	</div>
 	</div>
