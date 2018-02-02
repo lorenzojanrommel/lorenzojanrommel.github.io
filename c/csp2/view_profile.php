@@ -51,12 +51,95 @@
       </div>
 		<?php
 		if (isset($_SESSION['username']) && $_SESSION['user_level'] == 2) {
-			echo "<div class='col s12'>
-			<div class='order-details-container'>
-				<h4>Orders</h4>
+			?>
+			<div class='col s12'>
+				<div class='order-details-container'>
+					<h4>Orders</h4>
+						<?php 
+							$owner = $_SESSION['user_id'];
+							// echo $owner;
+
+							// $sql = "SELECT * FROM users JOIN orders ON (users.id = orders.user_id) GROUP BY user_id";
+							$sql = "SELECT * FROM users u, orders o, order_details od, products p
+							WHERE u.id = o.user_id
+							AND o.id = od.order_id
+							AND od.product_id = p.id
+							AND p.owner_user_id = '$owner'
+							GROUP BY user_id";
+							$results = mysqli_query($conn, $sql);
+							while ($row = mysqli_fetch_assoc($results)) {
+								extract($row);
+								// echo $user_id;
+								?>
+									<table>
+										<thead>
+											<tr>
+												<th><?php echo $first_name; ?></th>
+												<th></th>
+												<th></th>
+												<th></th>
+											</tr>
+										
+								<?php
+								$sql1 = "SELECT * FROM orders JOIN order_details ON (orders.id = order_details.order_id) WHERE user_id = '$user_id' GROUP BY order_id";
+								// echo $sql1;
+								$results1 = mysqli_query($conn, $sql1);
+								while ($row1 = mysqli_fetch_assoc($results1)) {
+									extract($row1);
+									// echo $user_id;
+									// echo "<br>";
+									$sql2 = "SELECT * FROM products JOIN order_details ON (order_details.product_id = products.id) JOIN orders ON (order_details.order_id = orders.id) WHERE order_id = '$order_id' AND owner_user_id = '$owner'GROUP BY order_id";
+									// echo $sql2;
+									// echo "<br>";
+									$results2 = mysqli_query($conn, $sql2);
+									// // echo $results2;
+									while ($row2 = mysqli_fetch_assoc($results2)) {
+									extract($row2);
+									$total = 0;
+									?>
+										<tr>
+											<th>Product Name</th>
+											<th>Quantity</th>
+											<th>Price</th>
+											<th>Subtotal</th>
+										</tr>
+									</thead>
+									<?php
+									$sql3 = "SELECT * FROM products JOIN order_details ON (order_details.product_id = products.id) JOIN orders ON (order_details.order_id = orders.id) WHERE order_id = '$order_id' AND owner_user_id = '$owner' AND user_id = '$user_id'";
+									$results3 = mysqli_query($conn, $sql3);
+									while ($row3 = mysqli_fetch_assoc($results3)) {	
+									extract($row3);
+									$subtotal = $price * $quantity;
+									$total += $subtotal;
+									?>
+									<tbody>
+										<tr>
+											<td> <?php echo $name; ?></td>
+											<td> <?php echo $quantity; ?></td>
+											<td> <?php echo $price; ?></td>
+											<td> <?php echo $subtotal; ?></td>
+										</tr>
+									<?php
+									};
+									?>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td><?php echo $total; ?></td>
+										</tr>
+							</tbody>
+							<?php
+									};
+								};
+								// echo "<hr>";
+								?>
+								</table>
+							<?php	};
+						?>
+				</div>
 			</div>
-		</div>";
-		}else{
+		<?php }else{
 		?>
 		<div class="col s12">
 			<div class="order-details-container">

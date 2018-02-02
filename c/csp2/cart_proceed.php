@@ -85,7 +85,7 @@
 			// $quantity = $_SESSION['cart'][$id]['quantity'];
 					// $subtotal=$price*$quantity;
 				// $subtotal = $price*$quantity
-				$sql = "SELECT * FROM products WHERE id = $value";
+				$sql = "SELECT * FROM products WHERE id = $ids";
 				$results = mysqli_query($conn, $sql);
 				$quantity = $_SESSION['cart'][$ids];
 				// $row = mysqli_fetch_assoc($results);
@@ -98,8 +98,8 @@
 								<tbody>
 									<tr>
 										<td><?php echo "<input type='text' class='black-text underline' name='pname' value='$name' readonly>"; ?></td>
-										<td><?php echo "<input type='text' class='underline black-text' name='pquantity' value='$quantity' class='center underline' readonly>"?></td>
-										<td><?php echo "<input type='text' class='underline black-text' name='pprice' value='$price' class='center underline' readonly>" ?></td>
+										<td><?php echo "<input type='text' class='center underline black-text' name='pquantity' value='$quantity' class='center underline' readonly>"?></td>
+										<td><?php echo "<input type='text' class='center underline black-text' name='pprice' value='$price' class='center underline' readonly>" ?></td>
 										<td class="center"><?php echo $subtotal; ?></td>
 									</tr>
 					<?php }; };

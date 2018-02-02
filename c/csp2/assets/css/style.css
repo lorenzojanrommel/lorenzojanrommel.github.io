@@ -148,3 +148,16 @@ input[type=text].underline:not(.browser-default){
 .order-details-container {
 	/*border: 1px solid #000;*/
 }
+
+@media only screen and (max-width: 480px){
+	ul .side-nav {
+		/*width: 150px;*/
+		opacity: 0.9;
+	}
+	.side-nav li> a {
+	padding: 0;
+	margin: 0 auto;
+	text-align: center;
+}
+
+}

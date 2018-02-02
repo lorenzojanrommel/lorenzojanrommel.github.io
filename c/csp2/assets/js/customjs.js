@@ -1,3 +1,9 @@
+  // Nav Bar Dropdown
+  $( document ).ready(function(){
+  $(".button-collapse").sideNav();
+
+  });
+
   // Modal
 $(document).ready (function ($) {
     $(function () {

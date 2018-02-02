@@ -6,12 +6,11 @@
 	$order_status = 1;
 	$sql = "INSERT INTO orders (user_id, total_price, id_status) VALUES ('$customer_id', '$total', '$order_status')";
 	mysqli_query($conn, $sql) or die (mysqli_error($conn));
-	// echo $user_id;
 	$user_id = mysqli_insert_id($conn);
 	// print_r($_SESSION['cart']);
 	foreach ($_SESSION['cart'] as $ids => $value) {
-		// echo $ids;
-		$sql = "SELECT * FROM products WHERE id = $value";
+		echo "<br>";
+		$sql = "SELECT * FROM products WHERE id = '$ids'";
 		$results = mysqli_query($conn, $sql);
 		$pquantity = htmlspecialchars($value);
 		while ($row = mysqli_fetch_assoc($results)) {

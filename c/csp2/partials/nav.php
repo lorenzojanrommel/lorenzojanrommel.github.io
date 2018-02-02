@@ -8,7 +8,7 @@ $username = isset($_SESSION['username']) ? //if
     <div class="nav-wrapper red darken-4">
       <div class="container">
       <a href="index.php" class="brand-logo">BFPC</a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="fa fa-bars" aria-hidden="true"></i></a>
+      <a href="#" data-activates="sidenav" class="button-collapse"><i class="fa fa-bars" aria-hidden="true"></i></a>
       <ul class="right hide-on-med-and-down">
       <?php if (isset($_SESSION['username']) && $_SESSION['user_level'] == 1 && $_SESSION['user_status'] == 1) {
       ?>
@@ -54,7 +54,7 @@ $username = isset($_SESSION['username']) ? //if
         }
         ?>
       </ul>
-      <ul class="side-nav" id="About-demo">
+      <ul class="side-nav" id="sidenav">
         <li><a href="home.php">Home</a></li>
         <li><a href="menu.php">Products</a></li>
         <li><a href="contact.php">Contact</a></li>
