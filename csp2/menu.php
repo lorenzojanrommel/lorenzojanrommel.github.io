@@ -77,6 +77,7 @@
       $sql = "SELECT * FROM products WHERE owner_user_id = '$owner'";
       $results = mysqli_query($conn, $sql);
       while ($item = mysqli_fetch_assoc($results)) {
+        extract($item);
       echo "<div class='col s12 m5 l4'>";
       echo "<div class='card hoverable'>";
       echo "<div class='card-img'>";
@@ -95,8 +96,8 @@
       echo "</div>";
       echo "</div>";
       if (isset($_SESSION['username']) && $_SESSION['user_level'] == '2') {
-     echo "<input type='button' class='btn blue accent-1 btn-product modal-trigger render_modal' href='#modal1' data-index='$index' value='Edit'>"; 
-      echo "<input type='button' class='btn red btn-product modal-trigger delete_render_modal' href='#delete_modal' data-index='$index' value='delete'>";
+     echo "<input type='button' class='btn blue accent-1 btn-product modal-trigger render_modal' href='#modal1' data-index='$id' value='Edit'>"; 
+      echo "<input type='button' class='btn red btn-product modal-trigger delete_render_modal' href='#delete_modal' data-index='$id' value='delete'>";
       echo "</div>";
       echo "</div>";
       echo "</div>";
