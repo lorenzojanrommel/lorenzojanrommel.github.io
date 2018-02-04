@@ -5,13 +5,13 @@ $username = isset($_SESSION['username']) ? //if
 
 ?>
   <nav>
-    <div class="nav-wrapper red darken-4">
+    <div class="nav-wrapper indigo darken-4">
       <div class="container">
       <a href="index.php" class="brand-logo">BFPC</a>
         <a href="#" data-activates="sidenav" class="button-collapse"><i class="fa fa-bars" aria-hidden="true"></i></a>
       <?php if (isset($_SESSION['username']) && $_SESSION['user_level'] == 3) {
         ?>
-      <ul class="right show-on-med-and-down">
+      <ul class="right show-on-med-and-down hide-on-large-only">
             <?php if (!isset($_SESSION['cart'])) {
              echo "<li><a href='cart_item.php'><i class='fa fa-shopping-cart' aria-hidden='true'></i></a></li>";
              }else{
@@ -117,7 +117,7 @@ $username = isset($_SESSION['username']) ? //if
 
   <!-- Dropdown Structure -->
   <ul id='logout_dropdown' class='dropdown-content'>
-    <li class="red darken-4 logout-user" selected disabled><?php echo'<i class="fa fa-user-o" aria-hidden="true"></i> '. $_SESSION['fname']; ?></li>
+    <li class="indigo darken-4 logout-user" selected disabled><?php echo'<i class="fa fa-user-o" aria-hidden="true"></i> '. $_SESSION['fname']; ?></li>
     <li class="divider"></li>
     <li><a href="view_profile.php">Your Profile</a></li>
     <li><a href="logout.php">Logout</a></li>

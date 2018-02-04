@@ -139,7 +139,7 @@
 						?>
 				</div>
 			</div>
-		<?php }else{
+		<?php }elseif(isset($_SESSION['username']) && $_SESSION['user_level'] == 3){
 		?>
 		<div class="col s12">
 			<div class="order-details-container">
@@ -165,9 +165,6 @@
 						?>
 						<table>
 							<thead>
-								<tr>
-								<th><?php echo $order_id; ?></th>									
-								</tr>
 								<tr>
 									<th>Product Name</th>
 									<th>Quantity</th>
@@ -210,6 +207,8 @@
 			</div>
 		</div>
 		<?php
+		}else{
+			echo "";
 		}
 	}
 	require 'template.php';

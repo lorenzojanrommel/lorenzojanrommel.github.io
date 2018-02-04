@@ -10,7 +10,7 @@
       echo "<a class='btn-floating btn-large waves-effect waves-light green accent-4 modal-trigger add_item' href='#modal2' id='add_item'><i class='material-icons'>add</i></a>";
     };
     ?>
-  <h4 class="">Category:</h4>
+  <h5 class="">Category:</h5>
     <div class="input-field col s12">
     <form>
     <select name="category">
@@ -29,7 +29,7 @@
   ?>
     </select>
     <label>Sort by:</label>
-    <button class="btn"> Sort By:</button>
+    <button class="btn indigo darken-4"> Sort By:</button>
     </form>
   </div>
   <a href=""></a>
@@ -45,7 +45,7 @@
     if($filter == 'All' || $item['category_id'] == $filter){
       if (!isset($_SESSION['username'])) {
       echo "<div class='col s12 m5 l4'>";
-      echo "<div class='card'>";
+      echo "<div class='card hoverable'>";
       echo "<div class='card-img'>";
       echo "<img class='product-image' src='".$item['image']."'><br>";
       echo "</div>";
@@ -78,7 +78,7 @@
       $results = mysqli_query($conn, $sql);
       while ($item = mysqli_fetch_assoc($results)) {
       echo "<div class='col s12 m5 l4'>";
-      echo "<div class='card'>";
+      echo "<div class='card hoverable'>";
       echo "<div class='card-img'>";
       echo "<img class='product-image' src='".$item['image']."'><br>";
       echo "</div>";
@@ -104,7 +104,7 @@
           };
       }elseif (isset($_SESSION['username']) && $_SESSION['user_level'] == '3') {
       echo "<div class='col s12 m5 l4'>";
-      echo "<div class='card'>";
+      echo "<div class='card hoverable'>";
       echo "<div class='card-img'>";
       echo "<img class='product-image' src='".$item['image']."'><br>";
       echo "</div>";
@@ -129,8 +129,8 @@
       }
       echo "</div>";
       echo "<form method='post' action='cart_item_endpoint.php?index=$index'>";
-      echo "QTTY: <input class='quantity' type='number' min='o' class='qttyItem' name='item_qtty'>";
-      echo "<button class='btn light-green accent-3 atc'> Add to cart </button>";
+      echo "QTTY: <input class='quantity hoverable' type='number' min='0' class='qttyItem' name='item_qtty'>";
+      echo "<button class='btn indigo accent-3 atc hoverable'> ADD CART </button>";
       echo "</form>";
       echo "</div>";
       echo "</div>";
@@ -139,7 +139,6 @@
       };
     };
     ?>
-
   <!-- Add item Modal Structure -->
       <div id="modal2" class="modal modal-fixed-footer">
         <div class="modal-content">

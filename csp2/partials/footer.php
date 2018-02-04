@@ -1,13 +1,13 @@
-<footer class="page-footer red darken-4">
+<footer class="page-footer indigo darken-4">
 			<div class="container">
 				<div class="row">
-					<div class="col s7 m9 l10">
-						<div class="title-footer">
+					<div class="col s7 m6 l7">
+						<div class="title-footer left">
 							<h3 class="title-footer">BFPC</h3>
 						</div>
 					</div>
-					<div class="col s5 m3 l2">
-						<div class="contacts-container">
+					<div class="col s5 m6 l5">
+						<div class="contacts-container right">
 							<div class="contacts">
 								<a href="#">
 									<i class="fa fa-facebook-official fa-2x" aria-hidden="true">
@@ -36,7 +36,7 @@
 			<div class="footer-copyright">
 				<div class="container">
 					<div class="copy">
-						© Jan Rommel Lorenzo | Capstone 2 | 2017
+						© Jan Rommel Lorenzo | Capstone 2 | 2018
 					</div>
 				</div>
 			</div>

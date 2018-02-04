@@ -38,8 +38,8 @@
 				echo "Customer";
 			}
 			?></td>
-			<td><?php echo "<button type='button' class='btn amber accent-4 modal-trigger update_user_modal' href='#update_user_modal' data-id='$id'><i class='material-icons'>edit</i> </button>" ?> </td>
-			<td><?php echo "<button type='button' class='btn red accent-4 modal-trigger delete_user_modal render_modal' href='#delete_user_modal' data-id='$id'><i class='material-icons'>delete</i></button>" ?> </td>
+			<td><?php echo "<button type='button' class='btn amber accent-4 modal-trigger update_user_modal hoverable' href='#update_user_modal' data-id='$id'><i class='material-icons'>edit</i> </button>" ?> </td>
+			<td><?php echo "<button type='button' class='btn red accent-4 modal-trigger delete_user_modal render_modal hoverable' href='#delete_user_modal' data-id='$id'><i class='material-icons'>delete</i></button>" ?> </td>
 		</tr>
 		<?php
 	};
