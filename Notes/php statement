@@ -1,0 +1,39 @@
+input > .value
+h1 > innerHTML
+
+to string >>> + "";
+to interger >> + 0; >>> parseInt
+
+
+if statement 
+------------
+var x = 9;
+if (x > 5) {
+	alert (x + "is greater than 5");
+}
+result: 9 is greater than 5
+
+if-else statement
+------------
+var x = 5;
+if (x > 5) {
+	alert (x + "is greater than 5");
+}
+else {
+	alert (x + "is not greater than 5");
+}
+result: 5 is NOT greater than 5
+
+else-if-else statement
+------------
+var x = 9;
+if (x > 5) {
+	alert (x + " is greater than 5");
+}
+else if {
+	alert (x + " is ");
+} 
+else {
+	alert (x + " is NOT greater than 5");
+}
+result: 9 is greater than 5

@@ -1,0 +1,10 @@
+https://getcomposer.org/	
+
+composer create-project --prefer-dist laravel/laravel template
+
+php artisan serve
+
+composer update
+
+php artisan route:list
+

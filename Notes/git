@@ -1,0 +1,86 @@
+To check current changes to directory:
+$ git status
+
+To move all changes to staging area: 
+$ git add .
+	Option
+	$git add [folder-name] --> Target Folder Name
+
+	$git add * -> Commit all changes to current directory only
+
+	$git add [filename] --> commit all changes to target file
+
+
+To create a new commit (Version):
+$ git commit -m "Your message. Describe your changes"
+
+To move all commits to remote repository: (Push)
+$git push github master
+
+To check all version:
+$git log
+
+@@@@@@@@@@@checking (fetch) (push)
+$git remote -v
+@@@@@@@@@@connection locale to remote
+$git remote add gitlab url 
+---------------------------------------------
+pull
+@@@@@@@@@@@copy
+git clone url
+
+git pull origin master
+
+commit --> a new version of the project
+push --> update the copy of remote repository
+pull --> update the copy of locale repository
+clone --> create a local copy of remote repository
+
+every changes to the local copy must be comitted
+push all commits to remote copy in github
+
+
+semantic syntax
+header
+footer
+aside
+article
+
+
+
+
+------------------------------------
+adding
+$git status
+$git add . 
+$git commit -m [descriptive message]
+$git push [alias] [branch]
+
+C:\Program Files\Sublime Text 3\
+
+
+mv -v [old name] [new name]
+
+
+overwrite
+labas/target-location/location-of-the-file.ext > [target-location]/[overwritefile.ext]
+cat ../[folder-name]/[folder-name]/[file-name.ext] > [folder-name]/[file-name]
+cat ../resources/mod02-04/index3.html > mod02-05/index.html
+
+
+
+CASCADING
+
+SPECIFICITY
+
+! --> IMPORTANT
+
+
+copy
+cp -vr [send-folder-name]/[. is all] space [receive-folder-name]/
+cp -vr mod02-05/. mod02-06/
+
+
+Other css framework
+materialize
+foundation.zurb

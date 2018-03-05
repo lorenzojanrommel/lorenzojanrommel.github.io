@@ -1,0 +1,120 @@
+php
+
+
+php > php hypertext preprocessor
+
+php can do
+-PHP generate dynamic page content
+-PHP can create, open, read, write. delete, and close files on the server
+-PHP can collect from data
+-PHP can send and receive cookies
+-PHP can add, delete, modify data in your database
+-PHP can be used to control user-access
+-PHP can encrypt data
+
+php.net/manual/en
+
+starting tag <?php and closing tag ?
+<?php .. ?> delimiter
+
+3 common variables types
+string 
+number 
+array
+
+
+single '' > exact
+double "" > include the value of the variable $value
+
+constant is an identifier(name) for a simple value. That value cannot change
+syntax
+define("name", "value")
+example:
+define("ROOT_LOCATION", "usr/local/www")
+
+
+
+Expression
+the most fundamental part of any programming language
+-assignment 
+-arithmetic
+-logical
+variable assignment
+----variable = value
+
+concatenate
+.=
+
+4 types of relational operator
+equality operator
+===
+comparison operator
+>
+>=
+<
+<=
+
+XOR
+1 true
+&& AND
+|| OR
+
+
+count > array
+strlen > string
+
+
+include to include 
+include "filephp.php";
+
+include_once "filephp.php";
+
+require the with include
+require is giving an error message if the function doesn't exist
+
+
+arrays in php
+
+indexed arrays - arrays with a numeric index
+associative arrays
+$age = ["Peter"=>"35"]
+meaning $age["Peter"] = 35
+foreach ($age as $variable_name => $variable_value) {
+	
+}
+multi-dimensional array 
+
+$team_ironman = ["Tony", "War Machine", "Vision"];
+$team_cap = ["Captain America", "Bucky"];
+$
+
+
+sort functions for arrays
+sort() - ascending
+rsort() - descending
+asort() - associative array ascending, according to value
+ksort() - associative array ascending, according to key
+arsort() - associative array descending, according to value
+krsort() - associative array descending, according to key
+
+
+Super Global
+(Associative arrays)
+GET
+htmlspecialchars($_GET['input']);
+%20 = > Space url
+%3C = >  /
+
+POST
+
+
+
+When to use get / POST
+GET
+Data is visible
+
+POST
+no data limit
+----------------
+SESSIONS
+

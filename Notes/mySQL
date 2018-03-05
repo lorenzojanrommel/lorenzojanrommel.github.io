@@ -1,0 +1,338 @@
+mySQL
+
+
+-------------------
+Define 
+Objects and Attributes
+Relationship
+ERD
+Convert our diagram into table
+
+one to many entity_one
+one to one either one
+many to many create new table to handle many to many many_id and many_id for new table
+
+
+4 Steps
+Identify the objects to store and their attributes
+Observe how the objects are related to each other
+create ERD
+Convert our ERD into tables
+
+
+
+
+MySQL via the CML
+Make sure to run/start MySQL from the XAMPP Control Panel
+Open the windows command line (cmd)
+Navigate to the XAMPP folder (cd\xampp\mysql\bin)
+run mysql.exe(mysql.exe -u root)
+
+
+
+DESCRIBE users;
+DROP TABLE users;
+SHOW TABLES;
+---------------
+Modifying a talbe syntax
+ALTER TALBE <table name> <table modification>;
+For table modifications
+ADD COLUMN <column name> <column desc>
+DROP COLUMN <column name>
+RENAMTE TO <new table name>
+
+CREATE DATABASE movies;
+USE movies
+CREATE TABLE users (
+	id int NOT NULL AUTO_INCREMENT,
+	firstName varchar(255) NOT NULL, 
+	lastName varchar(255) NOT NULL, 
+	middleName varchar(255) NOT NULL, 
+	username varchar(255) NOT NULL, 
+	password varchar(255) NOT NULL, 
+	PRIMARY KEY(id)
+	);
+
+
+CREATE TABLE artists (
+	id INT NOT NULL AUTO_INCREMENT, 
+	name VARCHAR(255) NOT NULL UNIQUE, 
+	PRIMARY KEY(id)
+	);
+
+
+CREATE TABLE albums(
+	id INT AUTO_INCREMENT NOT NULL,
+	name VARCHAR(255) NOT NULL,
+	year YEAR(4),
+	artists_id INT,
+	PRIMARY KEY (id),
+	FOREIGN KEY (artists_id)
+	 REFERENCES artists(id)
+
+);
+
+CREATE TABLE albums(
+	id INT AUTO_INCREMENT NOT NULL,
+	name VARCHAR(255) NOT NULL,
+	artists_id INT,
+	year YEAR(4),
+	PRIMARY KEY (id),
+	FOREIGN KEY (artists_id)
+	 REFERENCES artists(id)
+	 ON UPDATE CASCADE
+	 ON DELETE SET NULL
+);
+
+
+CREATE TABLE playlists(
+	id INT AUTO_INCREMENT NOT NULL,
+	date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	user_id INT,
+	PRIMARY KEY(id),
+	FOREIGN KEY(user_id)
+		REFERENCES users(id)
+		ON UPDATE CASCADE
+		ON DELETE SET NULL
+);
+
+CREATE TABLE songs(
+	id INT AUTO_INCREMENT NOT NULL,
+	title VARCHAR(255) NOT NULL,
+	length INT,
+	genre VARCHAR(255),
+	album_id INT,
+	PRIMARY KEY(id),
+	FOREIGN KEY (album_id)
+	 REFERENCES albums(id)
+	 ON UPDATE CASCADE
+	 ON DELETE SET NULL
+);
+
+CREATE TABLE song_playlists (
+	id INT AUTO_INCREMENT NOT NULL,
+	song_id INT,
+	playlist_id INT,
+	PRIMARY KEY (id),
+	FOREIGN KEY (song_id)
+	 REFERENCES songs(id)
+	 ON UPDATE CASCADE
+	 ON DELETE SET NULL,
+	FOREIGN KEY (playlist_id)
+	 REFERENCES playlists(id)
+	 ON UPDATE CASCADE
+	 ON DELETE SET NULL
+);
+
+
+Column Options
+Default - defaukt value of this column when the value is not specified
+AUTO_INCREMENT - 
+NOT NULL - this column canoot be empty
+UNIQUE - 
+
+
+SQL Commands
+
+Create -> INSERT INTO table(column1, ....) VALUES (val1, val2, val3, ...)
+Retrieve -> SELECT * FROM artists;
+	SELECT<columns> FROM table WHERE <condition>;
+	SELECT name FROM artists;
+	SELECT title FROM songs WHERE genre = 'OPM';
+	SELECT title, length FROM songs WHERE length > 240 AND genre = 'OPM';
+Multiple
+
+	Inner Join
+		SELECT <columns> FROM table1 JOIN table2 ON (<table1>.id = <table2>.<table1_id>);
+		SELECT name, title FROM albums JOIN songs ON(albums.id = songs.album_id);
+
+	Outer Join
+		Left Join
+			left to right
+			right null
+
+
+		Right Join
+
+LIKE
+	use WHERE <column> LIKE <pattern> to compate string patterns. Use _ and %. 
+
+	_ single letter
+	% multiple
+
+	SELECT * FROM songs WHERE title LIKE 'G%'; // first letter
+	SELECT * FROM songs WHERE title LIKE '%LE'; // last letter
+	SELECT * FROM songs WHERE title LIKE '%m%'; // wherever the letter is
+	SELECT * FROM songs WHERE title LIKE '________'; // ONLY EIGHT LETTER >> EIGHT UNDERSCORE
+	SELECT * FROM songs ORDER BY title; // sorting A > Z;
+	SELECT * FROM songs ORDER BY title ASC; // asc a > z
+	SELECT * FROM songs ORDER BY title DESC; // descending z > a
+	SELECT DISTINCT title FROM songs WHERE title = 'Kundiman' AND genre = 'OPM'; // Remove all redundant
+GROUP BY
+	SELECT genre,AVG(length) FROM songs GROUP BY genre;
+IN
+	SELECT * FROM songs WHERE album_id IN (2,3,4); // any of the values 
+ANY
+	SELECT * FROM songs WHERE album_id > ANY (2,3,4);
+ALL
+	SELECT * FROM songs WHERE album_id > ALL (2,3,4); // to match all
+
+
+Update - > UPDATE tablename SET column1 = newval1, column2 = newval2 WHERE column1 = oldval1;
+	UPDATE songs SET length = 240 WHERE title = 'Kundiman';
+Delete -> DELETE FROM artists // all
+	DELETE FROM table WHERE column = val;
+	DELETE FROM songs WHERE length > 240 AND genre = 'OPM';
+
+INSERT INTO artists (name) VALUES ('Rivermaya');
+INSERT INTO artists (name) VALUES ('Psy 6');
+
+INSERT INTO albums (id,name, year, artists_id) VALUES (1,'Psy 6', 2012, 2), (2,'Trip', 1996, 1);
+INSERT INTO songs (title, length, genre, album_id) VALUES ('Gangnam Style', 253, 'k-pop', 1), ('Kundiman', 234, 'OPM', 2), ('Kisapmata', 279, 'OPM', 2);
+
+INSERT INTO songs (title, length, genre, album_id) 
+					VALUES ('Gangnam Style', 253, 'k-pop', 1),
+						   ('Gentleman', 234, 'k-pop', 1),
+						   ('Pare Ko', 325, 'OPM', 2),
+						   ('Ligaya', 273, 'OPM', 2);
+
+
+
+Exercise SELECT 
+
+
+SELECT customerName FROM customers WHERE country = 'Philippines';
+
+SELECT contactFirstName, contactLastName FROM customers WHERE customerName = 'La Rochelle Gifts';
+
+SELECT MSRP FROM products WHERE productName = 'The Titanic';
+
+
+SELECT firstName, lastName FROM employees WHERE email = 'jfirrelli@classicmodelcars.com'; 
+
+SELECT * FROM customers WHERE state IS NULL; // 
+
+
+
+SELECT email FROM employess WHERE firstName = 'Steve' AND lastName = 'Pattersoni';
+
+
+SELECT customerName FROM customer WHERE country != 'USA' AND creditLimit > 3000;
+
+
+SELECT productName FROM products WHERE quantityInStock < 1000 OR productLine = 'Planes'; 
+
+
+
+SELECET firstName, lastName FROM employees JOIN offices ON (employees.officeCode = offices.officeCode) WHERE city = 'Tokyo';
+
+
+
+SELECT customerName FROM customers JOIN employees 
+		    ON (customers.salesRepEmployeeNumber = employees.employeeNumber) 
+		     WHERE firstName = 'Leslie' AND lastName='Thompson';
+
+
+SELECT productName FROM products JOIN orderdetails ON (products.productCode = orderdetails.productCode) 
+					JOIN order (orderdetails.ordernumber = orders.orderNumber) 
+					JOIN customers (orders.customerNumber = customers.customerNumber) 
+					WHERE customerName = 'Baane Mini Imports' ;
+
+
+
+
+SUBQUERIES
+
+
+Result of SELECT statements
+	Single / scalar
+	LIST
+	TABLE
+
+
+CREATE TABLE Shirts(id INT NOT NULL AUTO_INCREMENT, 
+					size VARCHAR(255) NOT NULL, 
+					price INT NOT NULL, 
+					PRIMARY KEY(id));
+
+CREATE TABLE Materials (id INT NOT NULL AUTO_INCREMENT,
+						shirt_id INT,
+						material VARCHAR(255) NOT NULL,
+						PRIMARY KEY (id),
+						FOREIGN KEY (shirt_id)
+						 REFERENCES Shirts(id)
+						 ON UPDATE CASCADE
+						 ON DELETE SET NULL);
+
+INSERT INTO Shirts (size, price) 
+					VALUES ('S', 450),
+						   ('M', 500),
+						   ('L', 550),
+						   ('XL',600);
+
+INSERT INTO Materials (shirt_id, material)
+					VALUES (3, 'cotton'),
+							(1, 'cotton'),
+							(4, 'chino'),
+							(2, 'denim');
+
+
+Aggregation Operators
+	-COUNT<Column>
+		Count the values in the column
+	-COUNT <*>
+		Count the number of rows
+		SELECT COUNT(*) FROM shirts;
+	SUM()
+		-SELECT SUM(price) FROM shirts;
+	MIN()
+		-SELECT MIN(price) FROM shirts;
+	MAX()
+		-MAX(PRICE) FROM shirts
+	AVG()
+		-SELECT AVG(price) FROM Shirts;
+
+SELECT price,size FROM Shirts JOIN Materials ON (Shirts.id = Materials.shirt_id) WHERE material = 'cotton';
+			the same with subqueries
+SELECT price,size FROM Shirts WHERE id IN (SELECT shirt_id FROM Materials WHERE material = 'cotton');
+
+SELECT COUNT(*) FROM Materials WHERE material = 'cotton';
+GROUP BY
+SELECT genre,AVG(length) FROM songs GROUP BY genre;
+HAVING
+SELECT genre,AVG(length) FROM songs GROUP BY genre HAVING AVG(length) > 276;
+SELECT genre,COUNT(*) FROM songs GROUP BY genre HAVING COUNT(genre) > 3;
+SELECT genre,COUNT(*) AS number_of_songs FROM songs GROUP BY genre HAVING COUNT(genre) > 3;
+
+SELECT name,COUNT(*) AS number_of_songs FROM albums JOIN songs ON (albums.id = songs.album_id) GROUP BY genre HAVING COUNT(genre)>3;
+
+SELECT firstName, LastName FROM employees JOIN customers
+    					  ON (employees.employeeNumber = customers.salesRepEmployeeNumber)
+					  WHERE country IN (SELECT country FROM offices);
+
+SELECT firstName, lastName FROM employees WHERE reportsTo = '1143';
+
+
+SELECT emp.firstName, emp.lastName, boss.firstName, boss.lastName FROM employees AS emp
+			JOIN employees as boss ON (boss.reportsTo = emp.employeeNumber)
+			WHERE boss.firstName = 'Anthony' AND boss.lastName = 'Bow';
+
+
+SELECT emp.firstName, emp.lastName, boss.firstName, boss.lastName FROM employees AS boss
+			JOIN employees as emp ON (boss.reportsTo = emp.employeeNumber)
+			WHERE emp.firstName = 'Anthony' AND emp.lastName = 'Bow';
+
+SELECT productLine FROM productlines WHERE textDescription LIKE '%state of the art%';
+
+SELECT customerName FROM customers WHERE country IN ('USA', 'FRANCE', 'CANADA', 'UK', 'ITALY');
+
+SELECT productName,buyPrice,MSRP FROM products WHERE buyPrice = (SELECT MAX(buyPrice) FROM products) OR MSRP=(SELECT MAX(MSRP) FROM products);
+
+SELECT productName,buyPrice FROM products ORDER BY buyPrice DESC LIMIT 3;
+
+SELECT COUNT(country) FROM customers WHERE country ='UK';
+
+SELECT customerName FROM customers WHERE customerNumber = (SELECT customerNumber FROM orders GROUP BY customerNumber ORDER BY COUNT(customerNumber) DESC LIMIT 1);
+
+
+SELECT c.customerName, SUM(od.quantityOrdered) FROM customers c JOIN orders o ON (c.customerNumber = o.customerNumber) JOIN orderdetails od ON (o.orderNumber = od.orderNumber) GROUP BY c.customerName ORDER BY SUM(od.quantityOrdered) DESC LIMIT 5;
